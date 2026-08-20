@@ -5,10 +5,21 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
+    tools:context=".MainActivity"
+    android:background="@color/white">
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:id="@+id/frameLayout_main_activity" />
+ <np.com.susanthapa.curved_bottom_navigation.CurvedBottomNavigationView
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_alignParentBottom="true"
+     app:cbn_selectedColor="@color/black"
+     app:cbn_unSelectedColor="@color/gray"
+     app:cbn_textColor="@color/gray"
+     app:cbn_textSize="15sp"
+     android:paddingBottom="6sp"
+     android:id="@+id/bottomNavigation"/>
 
 </RelativeLayout>
