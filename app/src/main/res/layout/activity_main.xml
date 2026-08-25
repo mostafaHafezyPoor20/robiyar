@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/white">
+    android:background="@color/background_item">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,24 +17,28 @@
           android:layout_height="wrap_content"
           android:src="@drawable/person_24px"
           android:layout_alignParentRight="true"
-          android:id="@+id/iconPerson"/>
+          android:id="@+id/iconPerson"
+          app:tint="@color/white"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toLeftOf="@id/iconPerson"
             android:text="adsfasdfasdf"
+            android:textColor="@color/white"
             android:layout_centerVertical="true"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/paid_24px"
             android:id="@+id/iconPaid"
+            app:tint="@color/white"
             android:layout_alignParentLeft="true"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@id/iconPaid"
+            android:textColor="@color/white"
             android:text="2500000"/>
 
     </RelativeLayout>
@@ -45,20 +49,21 @@
         android:id="@+id/frameLayout_main_activity"
         android:layout_below="@id/actionBar"
         android:elevation="12sp"
-        android:background="@drawable/background_item_rectangle"/>
+        android:background="@drawable/background_item_rectangle_white"/>
  <np.com.susanthapa.curved_bottom_navigation.CurvedBottomNavigationView
      android:layout_width="match_parent"
      android:layout_height="wrap_content"
      android:layout_alignParentBottom="true"
      app:cbn_selectedColor="@color/background_item"
-     app:cbn_unSelectedColor="@color/gray"
-     app:cbn_textColor="@color/white"
+     app:cbn_unSelectedColor="@color/black"
+     app:cbn_textColor="@color/black"
      app:cbn_showDot="true"
+     app:cbn_dotColor="@color/background_item"
      app:cbn_textSize="15sp"
      app:cbn_elevation="12sp"
      android:elevation="12sp"
      app:cbn_animDuration="500"
-     app:cbn_bg="@color/background_item"
+     app:cbn_bg="@color/white"
      android:paddingBottom="6sp"
      android:id="@+id/bottomNavigation"/>
 

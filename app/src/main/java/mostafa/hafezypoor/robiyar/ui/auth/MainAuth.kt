@@ -42,7 +42,7 @@ class MainAuth : AppCompatActivity() , IEventLogin, IEventRegister{
         }
     }
     fun expandAnimationCard(card: FrameLayout,fragment: Fragment){
-        // this function expand card with animation sexy (:
+
         card.post {
             val animationBottom=animationView.bottom
             val parent = card.parent as View
