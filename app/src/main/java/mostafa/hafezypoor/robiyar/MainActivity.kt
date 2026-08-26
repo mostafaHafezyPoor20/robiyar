@@ -28,6 +28,8 @@ class MainActivity : AppCompatActivity() {
             CbnMenuItem(R.drawable.alternate_email_24px,R.drawable.avd_robino,R.id.robino,"روبینو")
         )
         bottomNavigation.setMenuItems(menuItems)
+        AnimationCard.expandAnimation(card,supportFragmentManager,R.id.frameLayout_main_activity,
+            FMessenger(),"fmessenger",actionBar,350)
         bottomNavigation.setOnMenuItemClickListener{ cbn,index ->
                 when(index){
                     0 -> AnimationCard.expandAnimation(card,supportFragmentManager,R.id.frameLayout_main_activity,
