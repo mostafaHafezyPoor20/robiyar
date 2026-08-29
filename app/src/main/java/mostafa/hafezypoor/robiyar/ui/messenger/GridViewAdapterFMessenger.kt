@@ -18,10 +18,8 @@ class GridViewAdapterFMessenger(context : Context,list: List<ModelGridViewAdapte
         }
 
         val model : ModelGridViewAdapterFMessage? =getItem(position)
-       // val animation : LottieAnimationView = itemView.findViewById<LottieAnimationView>(R.id.animation)
         val icon : ImageView = itemView.findViewById<ImageView>(R.id.icon)
         val title : TextView = itemView.findViewById<TextView>(R.id.title)
-       // animation.setAnimation(model?.animationResource ?: 0)
         icon.setImageResource(model?.iconResource ?: 0)
         title.setText(model?.title)
         return itemView
