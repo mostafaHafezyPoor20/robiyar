@@ -27,4 +27,24 @@ object AnimationCard {
 
         }
     }
+    fun collapseAnimation(card: FrameLayout,thisFragment: Fragment,nextFragment: Fragment,nextTagFragmentName:String,fragmentManager: FragmentManager,viewTop:View,duration: Long,expand : Boolean,fragmentID:Int){
+        thisFragment?.let {
+            fragmentManager.beginTransaction().remove(it).commit()
+        }
+        card.post {
+            val heightVewTop = viewTop.height
+            val parent = card.parent as View
+            val screenHeight = parent.height
+            val availableHeight = screenHeight - heightVewTop
+            card.layoutParams.height = availableHeight
+            card.requestLayout()
+            card.translationY = 0f
+            card.animate().translationY(heightVewTop.toFloat())
+                .translationY(card.height.toFloat())
+                .setDuration(duration)
+                .withEndAction {
+                    if (expand)  expandAnimation(card,fragmentManager,fragmentID,nextFragment,nextTagFragmentName, viewTop,duration)
+                }.start()
+        }
+    }
 }

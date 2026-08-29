@@ -32,11 +32,12 @@ class MainActivity : AppCompatActivity() {
             FMessenger(),"fmessenger",actionBar,350)
         bottomNavigation.setOnMenuItemClickListener{ cbn,index ->
                 when(index){
-                    0 -> AnimationCard.expandAnimation(card,supportFragmentManager,R.id.frameLayout_main_activity,
-                        FMessenger(),"fmessenger",actionBar,350)
+                    0 -> AnimationCard.collapseAnimation(card,supportFragmentManager.findFragmentById(R.id.frameLayout_main_activity),
+                        FMessenger(),"FMessenger",supportFragmentManager,actionBar,300,true,R.id.frameLayout_main_activity)
 
-                    1 -> AnimationCard.expandAnimation(card,supportFragmentManager,R.id.frameLayout_main_activity,
-                        FRobino(),"fmessenger",actionBar,350)
+
+                    1 -> AnimationCard.collapseAnimation(card,supportFragmentManager.findFragmentById(R.id.frameLayout_main_activity),
+                        FRobino(),"FRobino",supportFragmentManager,actionBar,300,true,R.id.frameLayout_main_activity)
                 }
         }
         }
