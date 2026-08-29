@@ -11,36 +11,57 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="6sp"
+        android:elevation="0sp"
         android:id="@+id/actionBar">
-      <ImageView
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:src="@drawable/person_24px"
-          android:layout_alignParentRight="true"
-          android:id="@+id/iconPerson"
-          app:tint="@color/white"/>
-        <TextView
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toLeftOf="@id/iconPerson"
-            android:text="adsfasdfasdf"
-            android:textColor="@color/white"
-            android:layout_centerVertical="true"/>
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/paid_24px"
-            android:id="@+id/iconPaid"
-            app:tint="@color/white"
-            android:layout_alignParentLeft="true"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@id/iconPaid"
-            android:textColor="@color/white"
-            android:text="2500000"/>
-
+            android:layout_centerHorizontal="true"
+            app:cardCornerRadius="6sp"
+            android:id="@+id/cardViewDetail"
+            app:strokeWidth="0sp"
+            app:cardBackgroundColor="@android:color/transparent">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_margin="12sp"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="35sp"
+                    android:layout_height="35sp"
+                    android:src="@drawable/square_user_round"
+                    app:tint="@color/white"
+                    android:id="@+id/actionBarIcon"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="mostafa hafezy poor"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="12sp"
+                    android:gravity="center"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:layout_marginTop="12sp"
+           android:layout_below="@id/cardViewDetail"
+           android:gravity="center">
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:textColor="@color/white"
+               android:text="25000 تومان"
+               android:layout_marginRight="12sp"/>
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text=" موجودی : "
+               android:textStyle="bold"
+               android:textColor="@color/white"/>
+       </LinearLayout>
     </RelativeLayout>
     <FrameLayout
         android:layout_width="match_parent"
@@ -49,16 +70,18 @@
         android:id="@+id/frameLayout_main_activity"
         android:layout_below="@id/actionBar"
         android:elevation="12sp"
+        android:paddingTop="12sp"
+        android:layout_marginTop="12sp"
         android:background="@drawable/background_item_rectangle_white"/>
  <np.com.susanthapa.curved_bottom_navigation.CurvedBottomNavigationView
      android:layout_width="match_parent"
      android:layout_height="wrap_content"
      android:layout_alignParentBottom="true"
-     app:cbn_selectedColor="@color/background_item"
+     app:cbn_selectedColor="@color/black"
      app:cbn_unSelectedColor="@color/black"
      app:cbn_textColor="@color/black"
      app:cbn_showDot="true"
-     app:cbn_dotColor="@color/background_item"
+     app:cbn_dotColor="@color/black"
      app:cbn_textSize="15sp"
      app:cbn_elevation="12sp"
      android:elevation="12sp"

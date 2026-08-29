@@ -11,10 +11,10 @@ class FMessenger : Fragment(R.layout.fmessenger){
         super.onViewCreated(view, savedInstanceState)
         val modelList = ArrayList<ModelGridViewAdapterFMessage>()
         list = view.findViewById<GridView>(R.id.list)
-        modelList.add(ModelGridViewAdapterFMessage("ویو پست کانال", R.raw.view_animation))
-        modelList.add(ModelGridViewAdapterFMessage("عضو کانال", R.raw.channel_animation))
-        modelList.add(ModelGridViewAdapterFMessage("عضو گروه",R.raw.group_animation))
-        modelList.add(ModelGridViewAdapterFMessage("نظرسنجی روبیکا",R.raw.poll_animation))
+        modelList.add(ModelGridViewAdapterFMessage("ویو پست کانال", R.drawable.solid_view))
+        modelList.add(ModelGridViewAdapterFMessage("عضو کانال", R.drawable.crowd_people))
+        modelList.add(ModelGridViewAdapterFMessage("عضو گروه",R.drawable.group_circle_discussing))
+        modelList.add(ModelGridViewAdapterFMessage("نظرسنجی روبیکا",R.drawable.poll_follower_count))
         val adapter = GridViewAdapterFMessenger(context, modelList)
         list.adapter = adapter
 
