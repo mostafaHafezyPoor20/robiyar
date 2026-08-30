@@ -25,7 +25,10 @@ class MainActivity : AppCompatActivity() {
 
         val menuItems = arrayOf(
             CbnMenuItem(R.drawable.drafts_24px,R.drawable.avd_messenger,R.id.messenger,"پیام رسان"),
-            CbnMenuItem(R.drawable.alternate_email_24px,R.drawable.avd_robino,R.id.robino,"روبینو")
+            CbnMenuItem(R.drawable.alternate_email_24px,R.drawable.avd_robino,R.id.robino,"روبینو"),
+            CbnMenuItem(R.drawable.shopping_cart_24px,R.drawable.avd_shop,R.id.orders,"سفارش ها"),
+            CbnMenuItem(R.drawable.paid_24px,R.drawable.avd_paid,R.id.paid,"موجودی")
+
         )
         bottomNavigation.setMenuItems(menuItems)
         AnimationCard.expandAnimation(card,supportFragmentManager,R.id.frameLayout_main_activity,
@@ -34,7 +37,6 @@ class MainActivity : AppCompatActivity() {
                 when(index){
                     0 -> AnimationCard.collapseAnimation(card,supportFragmentManager.findFragmentById(R.id.frameLayout_main_activity),
                         FMessenger(),"FMessenger",supportFragmentManager,actionBar,300,true,R.id.frameLayout_main_activity)
-
 
                     1 -> AnimationCard.collapseAnimation(card,supportFragmentManager.findFragmentById(R.id.frameLayout_main_activity),
                         FRobino(),"FRobino",supportFragmentManager,actionBar,300,true,R.id.frameLayout_main_activity)
