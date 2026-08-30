@@ -85,7 +85,7 @@
      app:cbn_textSize="15sp"
      app:cbn_elevation="12sp"
      android:elevation="12sp"
-     app:cbn_animDuration="500"
+     app:cbn_animDuration="300"
      app:cbn_bg="@color/white"
      android:paddingBottom="6sp"
      android:id="@+id/bottomNavigation"/>
