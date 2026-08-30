@@ -28,7 +28,6 @@ class MainActivity : AppCompatActivity() {
             CbnMenuItem(R.drawable.alternate_email_24px,R.drawable.avd_robino,R.id.robino,"روبینو"),
             CbnMenuItem(R.drawable.shopping_cart_24px,R.drawable.avd_shop,R.id.orders,"سفارش ها"),
             CbnMenuItem(R.drawable.paid_24px,R.drawable.avd_paid,R.id.paid,"موجودی")
-
         )
         bottomNavigation.setMenuItems(menuItems)
         AnimationCard.expandAnimation(card,supportFragmentManager,R.id.frameLayout_main_activity,
