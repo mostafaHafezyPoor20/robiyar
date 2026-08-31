@@ -3,8 +3,14 @@ package mostafa.hafezypoor.robiyar
 import android.os.Bundle
 import android.widget.FrameLayout
 import android.widget.RelativeLayout
+import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.repeatOnLifecycle
+import kotlinx.coroutines.launch
 import mostafa.hafezypoor.robiyar.ui.messenger.FMessenger
 import mostafa.hafezypoor.robiyar.ui.order.FOrder
 import mostafa.hafezypoor.robiyar.ui.robino.FRobino
@@ -16,12 +22,36 @@ class MainActivity : AppCompatActivity() {
   private lateinit var bottomNavigation : CurvedBottomNavigationView
   private lateinit var card: FrameLayout
   private lateinit var actionBar: RelativeLayout
+  private lateinit var name : TextView
+  private lateinit var inventory : TextView
+  private val viewModel: MainActivityViewModel by  viewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-          bottomNavigation = findViewById<CurvedBottomNavigationView>(R.id.bottomNavigation)
+        bottomNavigation = findViewById<CurvedBottomNavigationView>(R.id.bottomNavigation)
         card = findViewById<FrameLayout>(R.id.frameLayout_main_activity)
         actionBar = findViewById<RelativeLayout>(R.id.actionBar)
+        name = findViewById<TextView>(R.id.name)
+        inventory = findViewById<TextView>(R.id.inventory)
+        viewModel.getDetailUser(getSharedPreferences("save",MODE_PRIVATE).getString("token","null") ?: "null")
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED){
+              viewModel.mainActivityState.collect {state->
+                  when(state){
+                      MainActivityState.Idle -> {}
+                      MainActivityState.Loading -> {}
+                      is MainActivityState.Success -> {
+                     //  state.response  = this object data exists
+                          name.text = state.response.name
+                          inventory.text = state.response.inventory + " تومان "
+                      }
+                      is MainActivityState.Error -> {
+
+                      }
+                  }
+              }
+            }
+        }
 
 
         val menuItems = arrayOf(
@@ -43,7 +73,6 @@ class MainActivity : AppCompatActivity() {
 
                     2 -> AnimationCard.collapseAnimation(card,supportFragmentManager.findFragmentById(R.id.frameLayout_main_activity),
                         FOrder(),"FOrder",supportFragmentManager,actionBar,300,true,R.id.frameLayout_main_activity)
-
 
                 }
         }

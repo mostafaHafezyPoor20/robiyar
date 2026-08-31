@@ -1,5 +1,6 @@
 package mostafa.hafezypoor.robiyar.data.remote
 
+import mostafa.hafezypoor.robiyar.data.model.ModelDetailUser
 import mostafa.hafezypoor.robiyar.data.model.ModelLogin
 import mostafa.hafezypoor.robiyar.data.model.ModelRegister
 import retrofit2.http.Field
@@ -14,4 +15,8 @@ interface ApiService {
     @FormUrlEncoded
     @POST("auth/register.php")
     suspend fun register(@Field("name")name: String, @Field("username")username: String,@Field("password")password: String): ModelRegister
+
+    @FormUrlEncoded
+    @POST("account/getDetailUser.php")
+    suspend fun getDetailUser(@Field("token")token:String): ModelDetailUser
 }

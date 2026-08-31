@@ -1,9 +1,6 @@
 package mostafa.hafezypoor.robiyar.ui.auth
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.view.View
-import android.widget.TextView
 import mostafa.hafezypoor.robiyar.R
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels

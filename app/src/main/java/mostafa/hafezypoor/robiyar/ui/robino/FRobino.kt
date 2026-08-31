@@ -3,11 +3,8 @@ package mostafa.hafezypoor.robiyar.ui.robino
 import android.os.Bundle
 import android.view.View
 import android.widget.GridView
-import androidx.constraintlayout.helper.widget.Grid
 import androidx.fragment.app.Fragment
 import mostafa.hafezypoor.robiyar.R
-import kotlin.random.Random
-
 class FRobino : Fragment(R.layout.frobino) {
     private lateinit var list : GridView
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

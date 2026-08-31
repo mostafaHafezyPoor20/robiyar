@@ -38,6 +38,7 @@
                     android:layout_height="wrap_content"
                     android:text="mostafa hafezy poor"
                     android:textColor="@color/white"
+                    android:id="@+id/name"
                     android:layout_marginTop="12sp"
                     android:gravity="center"/>
             </LinearLayout>
@@ -53,6 +54,7 @@
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:textColor="@color/white"
+               android:id="@+id/inventory"
                android:text="25000 تومان"
                android:layout_marginRight="12sp"/>
            <TextView
