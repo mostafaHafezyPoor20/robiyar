@@ -4,13 +4,14 @@ import android.os.Bundle
 import android.widget.FrameLayout
 import android.widget.RelativeLayout
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.repeatOnLifecycle
 import kotlinx.coroutines.launch
+import mostafa.hafezypoor.robiyar.ui.account.FAccount
 import mostafa.hafezypoor.robiyar.ui.messenger.FMessenger
 import mostafa.hafezypoor.robiyar.ui.order.FOrder
 import mostafa.hafezypoor.robiyar.ui.robino.FRobino
@@ -58,14 +59,15 @@ class MainActivity : AppCompatActivity() {
             CbnMenuItem(R.drawable.drafts_24px,R.drawable.avd_messenger,R.id.messenger,"پیام رسان"),
             CbnMenuItem(R.drawable.alternate_email_24px,R.drawable.avd_robino,R.id.robino,"روبینو"),
             CbnMenuItem(R.drawable.shopping_cart_24px,R.drawable.avd_shop,R.id.orders,"سفارش ها"),
-            CbnMenuItem(R.drawable.paid_24px,R.drawable.avd_paid,R.id.paid,"موجودی")
+            CbnMenuItem(R.drawable.account_circle_24px,R.drawable.avd_account,R.id.account,"حساب کاربری")
         )
         bottomNavigation.setMenuItems(menuItems)
         AnimationCard.expandAnimation(card,supportFragmentManager,R.id.frameLayout_main_activity,
             FMessenger(),"fmessenger",actionBar,350)
         bottomNavigation.setOnMenuItemClickListener{ cbn,index ->
+            val thisFragment : Fragment? =supportFragmentManager.findFragmentById(R.id.frameLayout_main_activity)
                 when(index){
-                    0 -> AnimationCard.collapseAnimation(card,supportFragmentManager.findFragmentById(R.id.frameLayout_main_activity),
+                    0 -> AnimationCard.collapseAnimation(card,thisFragment,
                         FMessenger(),"FMessenger",supportFragmentManager,actionBar,300,true,R.id.frameLayout_main_activity)
 
                     1 -> AnimationCard.collapseAnimation(card,supportFragmentManager.findFragmentById(R.id.frameLayout_main_activity),
@@ -74,6 +76,8 @@ class MainActivity : AppCompatActivity() {
                     2 -> AnimationCard.collapseAnimation(card,supportFragmentManager.findFragmentById(R.id.frameLayout_main_activity),
                         FOrder(),"FOrder",supportFragmentManager,actionBar,300,true,R.id.frameLayout_main_activity)
 
+                    3 -> AnimationCard.collapseAnimation(card,supportFragmentManager.findFragmentById(R.id.frameLayout_main_activity),
+                        FAccount(),"faccount",supportFragmentManager,actionBar,200,false,R.id.frameLayout_main_activity)
                 }
         }
         }

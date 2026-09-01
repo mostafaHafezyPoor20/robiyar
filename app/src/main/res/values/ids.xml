@@ -3,5 +3,5 @@
     <item name="messenger" type="id"/>
     <item name="robino" type="id"/>
     <item name="orders" type="id"/>
-    <item name="paid" type="id"/>
+    <item name="account" type="id"/>
 </resources>

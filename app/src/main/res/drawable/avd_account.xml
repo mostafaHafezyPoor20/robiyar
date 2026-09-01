@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:drawable="@drawable/paid_24px">
+    android:drawable="@drawable/account_circle_24px">
     <target
         android:animation="@animator/messenger_animator"
-        android:name="paid"/>
+        android:name="account"/>
 </animated-vector>

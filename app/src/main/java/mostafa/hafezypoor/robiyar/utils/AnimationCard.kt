@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 
 object AnimationCard {
-    fun expandAnimation(card : FrameLayout,fragmentManager: FragmentManager,fragmentID:Int , fragment : Fragment,tagFragmentName:String,viewTop: View,duration: Long = 600){
+    fun expandAnimation(card : FrameLayout,fragmentManager: FragmentManager,fragmentID:Int , fragment : Fragment?=null,tagFragmentName:String,viewTop: View,duration: Long = 600){
         // this function expand card with animation sexy (:
         card.post {
             val heightViewTop=viewTop.bottom
@@ -20,17 +20,18 @@ object AnimationCard {
                 .translationY(0f)
                 .setDuration(duration)
                 .withEndAction {
-                    fragmentManager.beginTransaction().replace(fragmentID,fragment,tagFragmentName).commit()
+                    if (fragment != null) fragmentManager.beginTransaction().replace(fragmentID,fragment,tagFragmentName).commit()
                 }
                 .start()
 
 
         }
     }
-    fun collapseAnimation(card: FrameLayout,thisFragment: Fragment,nextFragment: Fragment,nextTagFragmentName:String,fragmentManager: FragmentManager,viewTop:View,duration: Long,expand : Boolean,fragmentID:Int){
-        thisFragment?.let {
-            fragmentManager.beginTransaction().remove(it).commit()
-        }
+    fun collapseAnimation(card: FrameLayout,thisFragment: Fragment?,nextFragment: Fragment? = null,nextTagFragmentName:String,fragmentManager: FragmentManager,viewTop:View,duration: Long,expand : Boolean,fragmentID:Int){
+          thisFragment?.let {
+              if (it != null) fragmentManager.beginTransaction().remove(it).commit()
+      }
+
         card.post {
             val heightVewTop = viewTop.height
             val parent = card.parent as View
