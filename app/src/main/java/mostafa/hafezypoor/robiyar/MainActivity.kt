@@ -77,7 +77,7 @@ class MainActivity : AppCompatActivity() {
                         FOrder(),"FOrder",supportFragmentManager,actionBar,300,true,R.id.frameLayout_main_activity)
 
                     3 -> AnimationCard.collapseAnimation(card,supportFragmentManager.findFragmentById(R.id.frameLayout_main_activity),
-                        FAccount(),"faccount",supportFragmentManager,actionBar,200,false,R.id.frameLayout_main_activity)
+                        FAccount(),"faccount",supportFragmentManager,actionBar,200,true,R.id.frameLayout_main_activity)
                 }
         }
         }
