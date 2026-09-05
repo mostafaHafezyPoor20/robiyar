@@ -36,7 +36,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
-        android:id="@+id/frameLayout_main_activity"
+        android:id="@+id/add_order_messenger_frame_layout"
         android:layout_below="@id/actionBar"
         android:elevation="12sp"
         android:paddingTop="12sp"
