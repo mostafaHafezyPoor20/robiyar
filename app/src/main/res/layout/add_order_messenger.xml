@@ -19,12 +19,15 @@
          android:layout_height="100sp"
          android:src="@drawable/solid_view"
          android:layout_gravity="center"
+         android:id="@+id/imageHead"
          app:tint="@color/white"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="ویو پست کانال"
             android:gravity="center"
+            android:id="@+id/textHead"
+            android:layout_marginTop="12sp"
             android:textColor="@color/white"
             android:textStyle="bold"
             android:textSize="20sp"/>
