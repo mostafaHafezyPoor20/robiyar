@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+   <!--view page 1-->
+    <ViewFlipper
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/viewFlipper">
+<!--VIEW  1 , SHOW DETAIL ORDER-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="12sp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:padding="12sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="20sp"
+               android:text="نکات مهم :
+دلیل اصلی کمتر زده شدن بازدید یا انجام نشدن میتواند موارد زیر باشد"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:layout_marginTop="6sp"
+                android:text="1 _ بهتر است در روز های متوالی پست گذاشته شود"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:layout_marginTop="12sp"
+                android:text="2 _ اعلام تاریخ و حتی پیام پین شدن پیام نیز در کانال یک پست شناسایی می شود"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:layout_marginTop="12sp"
+                android:text="3 _  برای تصاویر دسته جمعی (کالج) بازدید برای هر تصویر زده میشود."/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:layout_marginTop="12sp"
+                android:text="4 _  برای پست‌های فوروارد شده بازدید زده نمیشود ، حتما باید پست مستقیم در کانال منتشر شده باشد"/>
+            <com.google.android.material.button.MaterialButton
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="12sp"
+          app:cornerRadius="12sp"
+          android:layout_marginRight="12sp"
+          android:id="@+id/btnV1_Understand"
+          android:layout_marginLeft="12sp"
+          app:backgroundTint="@color/background_item"
+          android:text="متوجه شدم"/>
+        </LinearLayout>
+<!--VIEW  2 ..-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="hello 2"/>
+        </LinearLayout>
+    </ViewFlipper>
+
+</RelativeLayout>
