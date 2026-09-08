@@ -15,8 +15,6 @@ class FViewPostChannel : Fragment(R.layout.fview_post_channel){
         super.onViewCreated(view, savedInstanceState)
         viewFlipper = view.findViewById<ViewFlipper>(R.id.viewFlipper)
         btnV1_Understand = view.findViewById<MaterialButton>(R.id.btnV1_Understand)
-        viewFlipper.setInAnimation(context, android.R.anim.fade_in)
-        viewFlipper.setInAnimation(context,android.R.anim.fade_out)
         btnV1_Understand.setOnClickListener {
             viewFlipper.showNext()
         }
