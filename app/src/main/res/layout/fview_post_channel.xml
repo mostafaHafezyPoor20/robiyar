@@ -10,7 +10,7 @@
         android:layout_height="match_parent"
         android:id="@+id/viewFlipper">
 <!--VIEW  1 , SHOW DETAIL ORDER-->
-  <com.google.android.material.card.MaterialCardView
+   <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -74,6 +74,18 @@
                     android:textStyle="bold"
                     app:backgroundTint="@color/background_item"
                     android:text="متوجه شدم"/>
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12sp"
+                    app:cornerRadius="12sp"
+                    android:layout_marginRight="12sp"
+                    android:id="@+id/btnV1_backToHome"
+                    android:layout_marginLeft="12sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/red"
+                    android:text="بازگشت به منو اصلی"/>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -92,6 +104,11 @@
                 android:gravity="center"
                 android:orientation="vertical"
                 android:padding="12sp">
+                <com.airbnb.lottie.LottieAnimationView
+                    android:layout_width="match_parent"
+                    android:layout_height="150sp"
+                    app:lottie_autoPlay="true"
+                    app:lottie_rawRes="@raw/setting_animation"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -114,16 +131,23 @@
                     app:cornerRadius="12sp"
                     android:text="ثبت سفارش"
                     android:textStyle="bold"
+                    android:layout_marginLeft="12sp"
+                    android:layout_marginRight="12sp"
                     android:textColor="@color/white"
                     app:backgroundTint="@color/background_item" />
                 <com.google.android.material.button.MaterialButton
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:backgroundTint="@color/red"
-                    app:cornerRadius="12sp"
                     android:layout_marginTop="12sp"
-                    android:text="بازگشت"
-                    android:textColor="@color/white"/>
+                    app:cornerRadius="12sp"
+                    android:id="@+id/btnV2_back"
+                    android:layout_marginLeft="12sp"
+                    android:layout_marginRight="12sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/red"
+                    android:text="بازگشت"/>
+
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
