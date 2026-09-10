@@ -36,32 +36,26 @@
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     android:textSize="20sp"
-                    android:text="نکات مهم :
-دلیل اصلی کمتر زده شدن بازدید یا انجام نشدن میتواند موارد زیر باشد"/>
+                    android:text="نکات مهم :"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="right"
                     android:layout_marginTop="6sp"
-                    android:text="1 _ بهتر است در روز های متوالی پست گذاشته شود"/>
+                    android:text="1 _ تا 24 ساعت برای انجام سرویس صبر کنید"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="right"
                     android:layout_marginTop="12sp"
-                    android:text="2 _ اعلام تاریخ و حتی پیام پین شدن پیام نیز در کانال یک پست شناسایی می شود"/>
+                    android:text="2 _ این سرویس گارانتی ریزش 1 تا 3 ماهه دارد (به طوری که ریزش در این مدت 0 درصد است) و پس از این مدت ریزش کم و طبیعی مشاهده خواهید کرد."/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="right"
                     android:layout_marginTop="12sp"
-                    android:text="3 _  برای تصاویر دسته جمعی (کالج) بازدید برای هر تصویر زده میشود."/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="right"
-                    android:layout_marginTop="12sp"
-                    android:text="4 _  برای پست‌های فوروارد شده بازدید زده نمیشود ، حتما باید پست مستقیم در کانال منتشر شده باشد"/>
+                    android:text="3 _  اگر خوش‌شانس باشید، به‌جای تعداد سفارش شما، به مقدار کل ظرفیت سرور برای شما عضو اضافه می‌شود!"/>
+
                 <com.google.android.material.button.MaterialButton
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -121,7 +115,7 @@
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="آیدی کانال"
+                        android:hint="آیدی گروه"
                         android:inputType="number"/>
                 </com.google.android.material.textfield.TextInputLayout>    <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"

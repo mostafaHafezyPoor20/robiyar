@@ -32,6 +32,7 @@ class FMessenger : Fragment(R.layout.fmessenger){
             }
 
          startActivity(intent)
+         activity.finish()
         }
 
         }

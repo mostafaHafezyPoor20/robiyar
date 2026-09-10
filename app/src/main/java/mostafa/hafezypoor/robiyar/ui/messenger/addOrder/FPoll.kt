@@ -10,7 +10,7 @@ import mostafa.hafezypoor.robiyar.MainActivity
 import mostafa.hafezypoor.robiyar.R
 import kotlin.random.Random
 
-class FViewPostChannel : Fragment(R.layout.fview_post_channel){
+class FPoll : Fragment(R.layout.fpoll){
     private lateinit var viewFlipper: ViewFlipper
     private lateinit var btnV1_Understand : MaterialButton
     private lateinit var btnV2_back : MaterialButton
