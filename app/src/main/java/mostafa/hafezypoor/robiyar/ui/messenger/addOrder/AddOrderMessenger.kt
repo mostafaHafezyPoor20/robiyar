@@ -35,6 +35,8 @@ class AddOrderMessenger : AppCompatActivity() {
             }else if (it == "MEMBER_CHANNEL"){
                 imageHead.setImageResource(R.drawable.crowd_people)
                 textHead.setText("عضو کانال")
+                AnimationCard.expandAnimation(card,supportFragmentManager,R.id.add_order_messenger_frame_layout,
+                    FMemberChannel(),"FMemberChannel",actionBar,500)
             }else if (it == "MEMBER_GROUP"){
                 imageHead.setImageResource(R.drawable.group_circle_discussing)
                 textHead.setText("عضو گروه")

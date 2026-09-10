@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+   <!--view page 1-->
+    <ViewFlipper
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/viewFlipper">
+<!--VIEW  1 , SHOW DETAIL ORDER-->
+   <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="12sp"
+            app:cardBackgroundColor="@color/white">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:padding="12sp">
+                <com.airbnb.lottie.LottieAnimationView
+                    android:layout_width="match_parent"
+                    android:layout_height="150sp"
+                    app:lottie_rawRes="@raw/warning_animation"
+                    app:lottie_autoPlay="true"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:padding="12sp"
+                    android:layout_marginTop="12sp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:text="نکات مهم :"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:layout_marginTop="6sp"
+                    android:text="1 _ این سرویس گارانتی ریزش 1 تا 3 ماهه دارد (به طوری که ریزش در این مدت 0 درصد است) و پس از این مدت ریزش کم و طبیعی مشاهده خواهید کرد.
+"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:layout_marginTop="12sp"
+                    android:text="2 _ دقت کنید گارانتی ریزش میتواند 1 یا 2 یا 3 ماه باشد ، یعنی بعد 1 ماه هم ممکن است ریزش کند (اشتباه برداشت گارانتی 3 ماهه نداشته باشید)"/>
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12sp"
+                    app:cornerRadius="12sp"
+                    android:layout_marginRight="12sp"
+                    android:id="@+id/btnV1_Understand"
+                    android:layout_marginLeft="12sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/background_item"
+                    android:text="متوجه شدم"/>
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12sp"
+                    app:cornerRadius="12sp"
+                    android:layout_marginRight="12sp"
+                    android:id="@+id/btnV1_backToHome"
+                    android:layout_marginLeft="12sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/red"
+                    android:text="بازگشت به منو اصلی"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+<!--VIEW  2 ..-->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="12sp"
+            app:cardBackgroundColor="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="12sp">
+                <com.airbnb.lottie.LottieAnimationView
+                    android:layout_width="match_parent"
+                    android:layout_height="150sp"
+                    app:lottie_autoPlay="true"
+                    app:lottie_rawRes="@raw/setting_animation"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12sp"
+                    android:text="حداقل تعداد سفارش 25 و حداکثر تعداد سفارش 1500"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12sp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="آیدی کانال"
+                        android:inputType="number"/>
+                </com.google.android.material.textfield.TextInputLayout>    <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12sp">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="تعداد سفارش "
+                        android:inputType="number"/>
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12sp"
+                    app:cornerRadius="12sp"
+                    android:text="ثبت سفارش"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="12sp"
+                    android:layout_marginRight="12sp"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@color/background_item" />
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12sp"
+                    app:cornerRadius="12sp"
+                    android:id="@+id/btnV2_back"
+                    android:layout_marginLeft="12sp"
+                    android:layout_marginRight="12sp"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/red"
+                    android:text="بازگشت"/>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </ViewFlipper>
+
+</RelativeLayout>
