@@ -12,6 +12,7 @@
         android:layout_height="25sp"
         android:src="@drawable/arrow_back_24px"
         app:tint="@color/white"
+        android:id="@+id/imageHeadBack"
         android:scaleType="centerCrop"/>
     <LinearLayout
         android:layout_width="match_parent"
