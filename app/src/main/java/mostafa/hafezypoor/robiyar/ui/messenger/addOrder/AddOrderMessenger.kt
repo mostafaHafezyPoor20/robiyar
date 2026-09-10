@@ -40,6 +40,8 @@ class AddOrderMessenger : AppCompatActivity() {
             }else if (it == "MEMBER_GROUP"){
                 imageHead.setImageResource(R.drawable.group_circle_discussing)
                 textHead.setText("عضو گروه")
+                AnimationCard.expandAnimation(card,supportFragmentManager,R.id.add_order_messenger_frame_layout,
+                    FMemberGroup(),"FMemberGroup",actionBar,500)
             }else if (it == "POLL"){
                 imageHead.setImageResource(R.drawable.poll_follower_count)
                 textHead.setText("نظر سنجی روبیکا")
