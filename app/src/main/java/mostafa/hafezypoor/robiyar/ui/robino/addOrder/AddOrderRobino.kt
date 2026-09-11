@@ -45,7 +45,7 @@ class AddOrderRobino : AppCompatActivity() {
                 imageHead.setImageResource(R.drawable.cartoon_post_photo)
                 textHead.setText("ویو پست روبینو")
                 AnimationCard.expandAnimation(card,supportFragmentManager,R.id.add_order_messenger_frame_layout,
-                    FMemberGroup(),"FMemberGroup",actionBar,500)
+                    FViewPostRobino(),"FViewPostRobino",actionBar,500)
             }
         }
         imageHeadBack.setOnClickListener {
