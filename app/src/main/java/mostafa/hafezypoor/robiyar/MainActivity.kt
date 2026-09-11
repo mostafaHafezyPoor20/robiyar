@@ -64,6 +64,15 @@ class MainActivity : AppCompatActivity() {
         bottomNavigation.setMenuItems(menuItems)
         AnimationCard.expandAnimation(card,supportFragmentManager,R.id.frameLayout_main_activity,
             FMessenger(),"fmessenger",actionBar,350)
+        intent.getStringExtra("DESTINATION")?.let {
+            when(it){
+                "ROBINO" -> AnimationCard.collapseAnimation(card,supportFragmentManager.findFragmentById(R.id.frameLayout_main_activity),
+                    FRobino(),"FRobino",supportFragmentManager,actionBar,300,true,R.id.frameLayout_main_activity)
+
+                else ->    AnimationCard.expandAnimation(card,supportFragmentManager,R.id.frameLayout_main_activity,
+                    FMessenger(),"fmessenger",actionBar,350)
+            }
+        }
         bottomNavigation.setOnMenuItemClickListener{ cbn,index ->
             val thisFragment : Fragment? =supportFragmentManager.findFragmentById(R.id.frameLayout_main_activity)
                 when(index){

@@ -22,6 +22,7 @@ class AddOrderRobino : AppCompatActivity() {
     private lateinit var textHead  : TextView
     private lateinit var card : FrameLayout
     private lateinit var actionBar: LinearLayout
+    private lateinit var intent : Intent
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.add_order_robino)
@@ -30,6 +31,8 @@ class AddOrderRobino : AppCompatActivity() {
         textHead = findViewById<TextView>(R.id.textHead)
         card = findViewById<FrameLayout>(R.id.add_order_messenger_frame_layout)
         actionBar = findViewById<LinearLayout>(R.id.actionBar)
+        intent = Intent(this, MainActivity::class.java)
+        intent.putExtra("DESTINATION","ROBINO")
         intent.getStringExtra("ItemClicked")?.let {
             if (it == "FOLLOWER_ROBINO"){
             imageHead.setImageResource(R.drawable.follow_button)
@@ -49,14 +52,14 @@ class AddOrderRobino : AppCompatActivity() {
             }
         }
         imageHeadBack.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(intent)
             finish()
         }
 
     }
 
     override fun onBackPressed() {
-     startActivity(Intent(this, MainActivity::class.java))
+     startActivity(intent)
         finish()
     }
 }
