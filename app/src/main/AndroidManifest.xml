@@ -25,6 +25,8 @@
         </activity>
         <activity android:name=".ui.messenger.addOrder.AddOrderMessenger"
             android:exported="true"/>
+        <activity android:name=".ui.robino.addOrder.AddOrderRobino"
+            android:exported="true"/>
     </application>
 
 </manifest>
