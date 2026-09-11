@@ -31,26 +31,21 @@ class AddOrderRobino : AppCompatActivity() {
         card = findViewById<FrameLayout>(R.id.add_order_messenger_frame_layout)
         actionBar = findViewById<LinearLayout>(R.id.actionBar)
         intent.getStringExtra("ItemClicked")?.let {
-            if (it == "VIEW_POST_CHANNEL"){
-            imageHead.setImageResource(R.drawable.solid_view)
-            textHead.setText("ویو پست کانال")
+            if (it == "FOLLOWER_ROBINO"){
+            imageHead.setImageResource(R.drawable.follow_button)
+            textHead.setText("فالور وربینو")
                 AnimationCard.expandAnimation(card,supportFragmentManager,R.id.add_order_messenger_frame_layout,
                     FViewPostChannel(),"ViewPostChannel",actionBar,500)
-            }else if (it == "MEMBER_CHANNEL"){
-                imageHead.setImageResource(R.drawable.crowd_people)
-                textHead.setText("عضو کانال")
+            }else if (it == "LIKE_POST_ROBINO"){
+                imageHead.setImageResource(R.drawable.post_reaction)
+                textHead.setText("لایک پست روبینو")
                 AnimationCard.expandAnimation(card,supportFragmentManager,R.id.add_order_messenger_frame_layout,
                     FMemberChannel(),"FMemberChannel",actionBar,500)
-            }else if (it == "MEMBER_GROUP"){
-                imageHead.setImageResource(R.drawable.group_circle_discussing)
-                textHead.setText("عضو گروه")
+            }else if (it == "VIEW_POST_ROBINO"){
+                imageHead.setImageResource(R.drawable.cartoon_post_photo)
+                textHead.setText("ویو پست روبینو")
                 AnimationCard.expandAnimation(card,supportFragmentManager,R.id.add_order_messenger_frame_layout,
                     FMemberGroup(),"FMemberGroup",actionBar,500)
-            }else if (it == "POLL"){
-                imageHead.setImageResource(R.drawable.poll_follower_count)
-                textHead.setText("نظر سنجی روبیکا")
-                AnimationCard.expandAnimation(card,supportFragmentManager,R.id.add_order_messenger_frame_layout,
-                    FPoll(),"FPoll",actionBar,500)
             }
         }
         imageHeadBack.setOnClickListener {
