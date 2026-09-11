@@ -10,7 +10,7 @@ import mostafa.hafezypoor.robiyar.MainActivity
 import mostafa.hafezypoor.robiyar.R
 import kotlin.random.Random
 
-class FFollowerRobino : Fragment(R.layout.ffollower_robino){
+class FFollowerRobino() : Fragment(R.layout.ffollower_robino){
     private lateinit var viewFlipper: ViewFlipper
     private lateinit var btnV1_Understand : MaterialButton
     private lateinit var btnV2_back : MaterialButton
@@ -28,7 +28,9 @@ class FFollowerRobino : Fragment(R.layout.ffollower_robino){
             viewFlipper.showPrevious()
         }
         btnV1_backToHome.setOnClickListener {
-            context.startActivity(Intent(activity, MainActivity::class.java))
+            val i = Intent(activity, MainActivity::class.java)
+            i.putExtra("DESTINATION","ROBINO")
+            context.startActivity(i)
             activity.finish()
         }
     }

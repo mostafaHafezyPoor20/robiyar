@@ -28,7 +28,9 @@ class FLikePostRobino : Fragment(R.layout.flike_post_robino){
             viewFlipper.showPrevious()
         }
         btnV1_backToHome.setOnClickListener {
-            context.startActivity(Intent(activity, MainActivity::class.java))
+            val i = Intent(activity, MainActivity::class.java)
+            i.putExtra("DESTINATION","ROBINO")
+            context.startActivity(i)
             activity.finish()
         }
     }

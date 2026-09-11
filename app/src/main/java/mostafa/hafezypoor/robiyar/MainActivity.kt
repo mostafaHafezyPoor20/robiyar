@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.widget.FrameLayout
 import android.widget.RelativeLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.appcompat.app.AppCompatActivity
@@ -66,8 +67,10 @@ class MainActivity : AppCompatActivity() {
             FMessenger(),"fmessenger",actionBar,350)
         intent.getStringExtra("DESTINATION")?.let {
             when(it){
-                "ROBINO" -> AnimationCard.collapseAnimation(card,supportFragmentManager.findFragmentById(R.id.frameLayout_main_activity),
+                "ROBINO" ->{  AnimationCard.collapseAnimation(card,supportFragmentManager.findFragmentById(R.id.frameLayout_main_activity),
                     FRobino(),"FRobino",supportFragmentManager,actionBar,300,true,R.id.frameLayout_main_activity)
+                    bottomNavigation.setMenuItems(menuItems,1)
+                }
 
                 else ->    AnimationCard.expandAnimation(card,supportFragmentManager,R.id.frameLayout_main_activity,
                     FMessenger(),"fmessenger",actionBar,350)

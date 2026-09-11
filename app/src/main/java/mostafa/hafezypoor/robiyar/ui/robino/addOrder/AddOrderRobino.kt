@@ -7,13 +7,8 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.button.MaterialButton
 import mostafa.hafezypoor.robiyar.MainActivity
 import mostafa.hafezypoor.robiyar.R
-import mostafa.hafezypoor.robiyar.ui.messenger.addOrder.FMemberChannel
-import mostafa.hafezypoor.robiyar.ui.messenger.addOrder.FMemberGroup
-import mostafa.hafezypoor.robiyar.ui.messenger.addOrder.FPoll
-import mostafa.hafezypoor.robiyar.ui.messenger.addOrder.FViewPostChannel
 import mostafa.hafezypoor.robiyar.utils.AnimationCard
 
 class AddOrderRobino : AppCompatActivity() {
@@ -22,7 +17,7 @@ class AddOrderRobino : AppCompatActivity() {
     private lateinit var textHead  : TextView
     private lateinit var card : FrameLayout
     private lateinit var actionBar: LinearLayout
-    private lateinit var intent : Intent
+    private lateinit var intentToActivity : Intent
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.add_order_robino)
@@ -31,8 +26,8 @@ class AddOrderRobino : AppCompatActivity() {
         textHead = findViewById<TextView>(R.id.textHead)
         card = findViewById<FrameLayout>(R.id.add_order_messenger_frame_layout)
         actionBar = findViewById<LinearLayout>(R.id.actionBar)
-        intent = Intent(this, MainActivity::class.java)
-        intent.putExtra("DESTINATION","ROBINO")
+        intentToActivity = Intent(this, MainActivity::class.java)
+        intentToActivity.putExtra("DESTINATION","ROBINO")
         intent.getStringExtra("ItemClicked")?.let {
             if (it == "FOLLOWER_ROBINO"){
             imageHead.setImageResource(R.drawable.follow_button)
@@ -52,14 +47,14 @@ class AddOrderRobino : AppCompatActivity() {
             }
         }
         imageHeadBack.setOnClickListener {
-            startActivity(intent)
+            startActivity(intentToActivity)
             finish()
         }
 
     }
 
     override fun onBackPressed() {
-     startActivity(intent)
+     startActivity(intentToActivity)
         finish()
     }
 }
