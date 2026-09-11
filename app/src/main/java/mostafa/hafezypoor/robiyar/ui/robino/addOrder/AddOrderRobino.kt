@@ -35,7 +35,7 @@ class AddOrderRobino : AppCompatActivity() {
             imageHead.setImageResource(R.drawable.follow_button)
             textHead.setText("فالور وربینو")
                 AnimationCard.expandAnimation(card,supportFragmentManager,R.id.add_order_messenger_frame_layout,
-                    FViewPostChannel(),"ViewPostChannel",actionBar,500)
+                    FFollowerRobino(),"FFollowerRobino",actionBar,500)
             }else if (it == "LIKE_POST_ROBINO"){
                 imageHead.setImageResource(R.drawable.post_reaction)
                 textHead.setText("لایک پست روبینو")
