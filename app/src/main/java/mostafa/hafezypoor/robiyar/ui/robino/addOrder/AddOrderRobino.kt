@@ -40,7 +40,7 @@ class AddOrderRobino : AppCompatActivity() {
                 imageHead.setImageResource(R.drawable.post_reaction)
                 textHead.setText("لایک پست روبینو")
                 AnimationCard.expandAnimation(card,supportFragmentManager,R.id.add_order_messenger_frame_layout,
-                    FMemberChannel(),"FMemberChannel",actionBar,500)
+                    FLikePostRobino(),"FLikePostRobino",actionBar,500)
             }else if (it == "VIEW_POST_ROBINO"){
                 imageHead.setImageResource(R.drawable.cartoon_post_photo)
                 textHead.setText("ویو پست روبینو")
