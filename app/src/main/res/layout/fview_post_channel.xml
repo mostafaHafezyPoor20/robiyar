@@ -123,7 +123,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="آیدی کانال"
-                        android:inputType="number"/>
+                        android:id="@+id/channelID"
+                        android:inputType="textPersonName"/>
                 </com.google.android.material.textfield.TextInputLayout>    <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -132,6 +133,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="تعداد سفارش "
+                        android:id="@+id/countOrder"
                         android:inputType="number"/>
                 </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.button.MaterialButton
@@ -141,6 +143,7 @@
                     app:cornerRadius="12sp"
                     android:text="ثبت سفارش"
                     android:textStyle="bold"
+                    android:id="@+id/btnAddOrder"
                     android:layout_marginLeft="12sp"
                     android:layout_marginRight="12sp"
                     android:textColor="@color/white"

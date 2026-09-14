@@ -24,4 +24,8 @@ interface ApiService {
     @FormUrlEncoded
     @POST("messenger/viewPostChannel/getSettingOrder.php")
     suspend fun getSettingViewPostChannel(@Field("token")token:String): ModelSettingOrders
+
+    @FormUrlEncoded
+    @POST("messenger/viewPostChannel/addViewPostChannel.php")
+    suspend fun addViewPostChannel(@Field("token")token: String, @Field("channelID")channelID: String, @Field("countOrder")countOrder:String): String
 }
