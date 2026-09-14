@@ -6,10 +6,12 @@ import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.button.MaterialButton
 import mostafa.hafezypoor.robiyar.MainActivity
 import mostafa.hafezypoor.robiyar.R
+import mostafa.hafezypoor.robiyar.ui.messenger.MessengerViewModel
 import mostafa.hafezypoor.robiyar.utils.AnimationCard
 
 class AddOrderMessenger : AppCompatActivity() {

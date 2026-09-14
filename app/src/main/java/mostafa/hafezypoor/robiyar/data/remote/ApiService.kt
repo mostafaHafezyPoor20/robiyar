@@ -3,6 +3,7 @@ package mostafa.hafezypoor.robiyar.data.remote
 import mostafa.hafezypoor.robiyar.data.model.ModelDetailUser
 import mostafa.hafezypoor.robiyar.data.model.ModelLogin
 import mostafa.hafezypoor.robiyar.data.model.ModelRegister
+import mostafa.hafezypoor.robiyar.data.model.ModelSettingOrders
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.POST
@@ -19,4 +20,8 @@ interface ApiService {
     @FormUrlEncoded
     @POST("account/getDetailUser.php")
     suspend fun getDetailUser(@Field("token")token:String): ModelDetailUser
+
+    @FormUrlEncoded
+    @POST("messenger/viewPostChannel/getSettingOrder.php")
+    suspend fun getSettingViewPostChannel(@Field("token")token:String): ModelSettingOrders
 }

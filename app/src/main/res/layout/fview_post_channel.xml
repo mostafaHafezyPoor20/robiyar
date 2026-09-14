@@ -113,6 +113,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12sp"
+                    android:id="@+id/titleOrder"
                     android:text="حداقل تعداد سفارش 25 و حداکثر تعداد سفارش 1500"/>
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
