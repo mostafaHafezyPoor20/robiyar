@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import mostafa.hafezypoor.robiyar.MainActivity
 import mostafa.hafezypoor.robiyar.R
+import mostafa.hafezypoor.robiyar.ui.inventory.FInventory
 import mostafa.hafezypoor.robiyar.ui.inventory.FShowDialogNotEnoughInventory
 import mostafa.hafezypoor.robiyar.utils.AnimationCard
 
@@ -69,7 +70,7 @@ class AddOrderMessenger : AppCompatActivity() , IEvent ,mostafa.hafezypoor.robiy
     }
 
     override fun inventoryNotEnough() {
-        val fShowDialogNotEnoughInventory = FShowDialogNotEnoughInventory("titile","btn",this)
+        val fShowDialogNotEnoughInventory = FShowDialogNotEnoughInventory("موجودی شما کافی نیست !","افزایش موجودی",this)
         AnimationCard.collapseAnimation(card
             ,thisFragment,
             fShowDialogNotEnoughInventory,
@@ -77,6 +78,10 @@ class AddOrderMessenger : AppCompatActivity() , IEvent ,mostafa.hafezypoor.robiy
             actionBar,200,true,R.id.add_order_messenger_frame_layout)
     }
     override fun onClickDissmissFShowDialogNotEnoughInventory() {
-        TODO("Not yet implemented")
+        AnimationCard.collapseAnimation(card
+            ,thisFragment,
+            FInventory(),
+            "fShowDialogNotEnoughInventory",supportFragmentManager,
+            actionBar,200,true,R.id.add_order_messenger_frame_layout)
     }
 }
