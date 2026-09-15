@@ -6,7 +6,6 @@ import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import mostafa.hafezypoor.robiyar.MainActivity
@@ -40,7 +39,7 @@ class AddOrderMessenger : AppCompatActivity() , IEvent ,mostafa.hafezypoor.robiy
             }else if (it == "MEMBER_CHANNEL"){
                 imageHead.setImageResource(R.drawable.crowd_people)
                 textHead.setText("عضو کانال")
-                thisFragment = FMemberChannel()
+                thisFragment = FMemberShipChannel(this)
                 AnimationCard.expandAnimation(card,supportFragmentManager,R.id.add_order_messenger_frame_layout,
                     thisFragment,"FMemberChannel",actionBar,500)
             }else if (it == "MEMBER_GROUP"){

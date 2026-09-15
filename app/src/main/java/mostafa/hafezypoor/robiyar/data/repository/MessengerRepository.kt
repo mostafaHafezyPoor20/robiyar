@@ -10,4 +10,8 @@ class MessengerRepository(private val apiService: ApiService) {
     suspend fun addViewPostChannel(token: String,channelID: String, countOrder:String):String{
         return apiService.addViewPostChannel(token,channelID,countOrder)
     }
+
+    suspend fun getSettingMemberShipChannel(token:String): ModelSettingOrders{
+        return apiService.getSettingMemberShipChannel(token)
+    }
 }

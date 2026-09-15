@@ -17,7 +17,7 @@ class MessengerViewModel(): ViewModel() {
 
     private val stateAddOrder=MutableStateFlow<AddOrderState>(AddOrderState.Idle)
     val state_AddOrder: StateFlow<AddOrderState> = stateAddOrder.asStateFlow()
-
+    //VIEW POST CHANNEL
     fun getSettingViewPostChannel(token: String){
         viewModelScope.launch {
             try {
@@ -35,6 +35,17 @@ class MessengerViewModel(): ViewModel() {
                 stateAddOrder.value = AddOrderState.Success(response)
             }catch (e: Exception){
                 stateAddOrder.value = AddOrderState.Error(e.message ?: "Unknown Error")
+            }
+        }
+    }
+    //MEMBER SHIP CHANNEL
+    fun getSettingMemberShipChannel(token:String){
+        viewModelScope.launch {
+            try {
+             val response =   messengerRepository.getSettingMemberShipChannel(token);
+                stateSettingOrder.value = SettingOrderState.Success(response)
+            }catch (e: Exception){
+                stateSettingOrder.value = SettingOrderState.Error(e.message ?: "Unknown error")
             }
         }
     }
