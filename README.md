@@ -6,7 +6,7 @@
 
  Planned and implemented features include : 
 
- - post views []
+ - post views [x]
  - Channel membership []
  - group membership []
  - poll status []
