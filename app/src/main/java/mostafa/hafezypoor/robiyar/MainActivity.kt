@@ -71,7 +71,11 @@ class MainActivity : AppCompatActivity() {
                     FRobino(),"FRobino",supportFragmentManager,actionBar,300,true,R.id.frameLayout_main_activity)
                     bottomNavigation.setMenuItems(menuItems,1)
                 }
-
+               "ORDERS"  ->{
+                   AnimationCard.collapseAnimation(card,supportFragmentManager.findFragmentById(R.id.frameLayout_main_activity),
+                       FOrder(),"FOrder",supportFragmentManager,actionBar,300,true,R.id.frameLayout_main_activity)
+                   bottomNavigation.setMenuItems(menuItems,2)
+               }
                 else ->    AnimationCard.expandAnimation(card,supportFragmentManager,R.id.frameLayout_main_activity,
                     FMessenger(),"fmessenger",actionBar,350)
             }

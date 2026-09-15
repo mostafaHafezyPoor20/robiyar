@@ -31,16 +31,20 @@ class FViewPostChannel() : Fragment(R.layout.fview_post_channel){
     private lateinit var btnV2_back : MaterialButton
     private lateinit var btnV1_backToHome : MaterialButton
     private lateinit var btnAddOrder : MaterialButton
+    private lateinit var btnGoListOreders : MaterialButton
     private lateinit var countOrder : TextInputEditText
     private lateinit var channelID : TextInputEditText
     private lateinit var titleOrder: TextView
     private lateinit var token:String
+    private  var maximumOrder = 0
+    private  var minimumOrder = 0
     private val viewModel: MessengerViewModel by viewModels()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewFlipper = view.findViewById<ViewFlipper>(R.id.viewFlipper)
         btnV1_Understand = view.findViewById<MaterialButton>(R.id.btnV1_Understand)
         btnV1_backToHome = view.findViewById<MaterialButton>(R.id.btnV1_backToHome)
+        btnGoListOreders = view.findViewById<MaterialButton>(R.id.btnGoListOreders)
         btnV2_back = view.findViewById<MaterialButton>(R.id.btnV2_back)
         btnAddOrder = view.findViewById<MaterialButton>(R.id.btnAddOrder)
         titleOrder = view.findViewById<TextView>(R.id.titleOrder)
@@ -62,13 +66,19 @@ class FViewPostChannel() : Fragment(R.layout.fview_post_channel){
                       SettingOrderState.Idle -> {}
                       SettingOrderState.Loading -> {}
                       is SettingOrderState.Success -> {
+                          if (state.response.maximumOrderUserPrice.toInt() > state.response.maximumOrder.toInt()){
+                              maximumOrder = state.response.maximumOrder.toInt()
+                          }else{
+                              maximumOrder = state.response.maximumOrderUserPrice.toInt()
+                          }
+                          minimumOrder = state.response.minimumOrder.toInt()
                           if(state.response.maximumOrderUserPrice.equals("0")){
                               // if inventory user = 0
                                 btnV1_Understand.setOnClickListener {
                                     Toast.makeText(context,"inventory not enugh", Toast.LENGTH_LONG).show()
                                 }
                           }else{
-                              titleOrder.text = " حداقل تعداد سفارش ${state.response.minimumOrder} و حداکثر تعداد سفارش  ${state.response.maximumOrderUserPrice}"
+                              titleOrder.text = " حداقل تعداد سفارش ${minimumOrder} و حداکثر تعداد سفارش بر اساس موجودی شما ${maximumOrder}"
                               btnV1_Understand.setOnClickListener {
                                   viewFlipper.showNext()
                               }
@@ -81,10 +91,14 @@ class FViewPostChannel() : Fragment(R.layout.fview_post_channel){
         }
         btnAddOrder.setOnClickListener {
             if (channelID.text.toString().isEmpty()){
-                countOrder.error = "تعداد سفارش نمتواند 0 باشد !"
+                countOrder.error = "تعداد سفارش نمتواند خالی باشد !"
             }else if (countOrder.text.toString().isEmpty()){
                 channelID.error = "آیدی کانال نمیتواند خالی باشد"
-            }else {
+            }else if (countOrder.text.toString().trim().toInt() > maximumOrder){
+                countOrder.error = " حداکثر تعداد سفارش ${maximumOrder} بازدید است "
+            }else if (countOrder.text.toString().trim().toInt() < minimumOrder){
+                countOrder.error = " حداقل تعداد سفارش ${minimumOrder} بازذید است "
+            } else {
                 viewModel.addViewPostChannel(token,channelID.text.toString().trim(),countOrder.text.toString().trim())
                 viewLifecycleOwner.lifecycleScope.launch {
                     viewModel.state_AddOrder.collect {state ->
@@ -93,7 +107,7 @@ class FViewPostChannel() : Fragment(R.layout.fview_post_channel){
                             AddOrderState.Loading -> {}
                             is AddOrderState.Success -> {
                                 if (state.response.equals("200")){
-                                    Toast.makeText(context,"order is added ", Toast.LENGTH_LONG).show()
+                                  viewFlipper.showNext()
                                 }else if (state.response.equals("1001")||state.response.equals("1002")){
                                     Toast.makeText(context,"inventory not enough", Toast.LENGTH_LONG).show()
                                 }
@@ -104,6 +118,11 @@ class FViewPostChannel() : Fragment(R.layout.fview_post_channel){
                 }
             }
         }
-
+     btnGoListOreders.setOnClickListener {
+         val intent = Intent(activity, MainActivity::class.java)
+         intent.putExtra("DESTINATION","ORDERS")
+         startActivity(intent)
+         activity.finish()
+     }
     }
 }
