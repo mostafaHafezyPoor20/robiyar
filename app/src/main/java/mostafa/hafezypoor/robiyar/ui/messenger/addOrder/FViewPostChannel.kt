@@ -18,14 +18,13 @@ import com.google.android.material.textfield.TextInputEditText
 import kotlinx.coroutines.launch
 import mostafa.hafezypoor.robiyar.MainActivity
 import mostafa.hafezypoor.robiyar.R
-import mostafa.hafezypoor.robiyar.data.model.ModelSettingOrders
 import mostafa.hafezypoor.robiyar.ui.messenger.AddOrderState
 import mostafa.hafezypoor.robiyar.ui.messenger.MessengerViewModel
 import mostafa.hafezypoor.robiyar.ui.messenger.SettingOrderState
 import kotlin.getValue
 import kotlin.random.Random
 
-class FViewPostChannel() : Fragment(R.layout.fview_post_channel){
+class FViewPostChannel(val iEvent: IEvent) : Fragment(R.layout.fview_post_channel){
     private lateinit var viewFlipper: ViewFlipper
     private lateinit var btnV1_Understand : MaterialButton
     private lateinit var btnV2_back : MaterialButton
@@ -75,7 +74,7 @@ class FViewPostChannel() : Fragment(R.layout.fview_post_channel){
                           if(state.response.maximumOrderUserPrice.equals("0")){
                               // if inventory user = 0
                                 btnV1_Understand.setOnClickListener {
-                                    Toast.makeText(context,"inventory not enugh", Toast.LENGTH_LONG).show()
+                                    iEvent.inventoryNotEnough()
                                 }
                           }else{
                               titleOrder.text = " حداقل تعداد سفارش ${minimumOrder} و حداکثر تعداد سفارش بر اساس موجودی شما ${maximumOrder}"
@@ -108,8 +107,6 @@ class FViewPostChannel() : Fragment(R.layout.fview_post_channel){
                             is AddOrderState.Success -> {
                                 if (state.response.equals("200")){
                                   viewFlipper.showNext()
-                                }else if (state.response.equals("1001")||state.response.equals("1002")){
-                                    Toast.makeText(context,"inventory not enough", Toast.LENGTH_LONG).show()
                                 }
                             }
                             is AddOrderState.Error -> { }

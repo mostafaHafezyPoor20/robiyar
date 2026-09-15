@@ -6,19 +6,20 @@ import android.widget.FrameLayout
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.activity.viewModels
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.button.MaterialButton
+import androidx.fragment.app.Fragment
 import mostafa.hafezypoor.robiyar.MainActivity
 import mostafa.hafezypoor.robiyar.R
-import mostafa.hafezypoor.robiyar.ui.messenger.MessengerViewModel
+import mostafa.hafezypoor.robiyar.ui.inventory.FShowDialogNotEnoughInventory
 import mostafa.hafezypoor.robiyar.utils.AnimationCard
 
-class AddOrderMessenger : AppCompatActivity() {
+class AddOrderMessenger : AppCompatActivity() , IEvent ,mostafa.hafezypoor.robiyar.ui.inventory.IEvent{
     private lateinit var imageHead : ImageView
     private lateinit var imageHeadBack : ImageView
     private lateinit var textHead  : TextView
     private lateinit var card : FrameLayout
+    private lateinit var thisFragment : Fragment
     private lateinit var actionBar: LinearLayout
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,23 +33,27 @@ class AddOrderMessenger : AppCompatActivity() {
             if (it == "VIEW_POST_CHANNEL"){
             imageHead.setImageResource(R.drawable.solid_view)
             textHead.setText("ویو پست کانال")
+                thisFragment = FViewPostChannel(this)
                 AnimationCard.expandAnimation(card,supportFragmentManager,R.id.add_order_messenger_frame_layout,
-                    FViewPostChannel(),"ViewPostChannel",actionBar,500)
+                   thisFragment ,"ViewPostChannel",actionBar,500)
             }else if (it == "MEMBER_CHANNEL"){
                 imageHead.setImageResource(R.drawable.crowd_people)
                 textHead.setText("عضو کانال")
+                thisFragment = FMemberChannel()
                 AnimationCard.expandAnimation(card,supportFragmentManager,R.id.add_order_messenger_frame_layout,
-                    FMemberChannel(),"FMemberChannel",actionBar,500)
+                    thisFragment,"FMemberChannel",actionBar,500)
             }else if (it == "MEMBER_GROUP"){
                 imageHead.setImageResource(R.drawable.group_circle_discussing)
                 textHead.setText("عضو گروه")
+                thisFragment = FMemberGroup()
                 AnimationCard.expandAnimation(card,supportFragmentManager,R.id.add_order_messenger_frame_layout,
-                    FMemberGroup(),"FMemberGroup",actionBar,500)
+                    thisFragment,"FMemberGroup",actionBar,500)
             }else if (it == "POLL"){
                 imageHead.setImageResource(R.drawable.poll_follower_count)
                 textHead.setText("نظر سنجی روبیکا")
+                thisFragment = FPoll()
                 AnimationCard.expandAnimation(card,supportFragmentManager,R.id.add_order_messenger_frame_layout,
-                    FPoll(),"FPoll",actionBar,500)
+                    thisFragment,"FPoll",actionBar,500)
             }
         }
         imageHeadBack.setOnClickListener {
@@ -61,5 +66,17 @@ class AddOrderMessenger : AppCompatActivity() {
     override fun onBackPressed() {
      startActivity(Intent(this, MainActivity::class.java))
         finish()
+    }
+
+    override fun inventoryNotEnough() {
+        val fShowDialogNotEnoughInventory = FShowDialogNotEnoughInventory("titile","btn",this)
+        AnimationCard.collapseAnimation(card
+            ,thisFragment,
+            fShowDialogNotEnoughInventory,
+            "fShowDialogNotEnoughInventory",supportFragmentManager,
+            actionBar,200,true,R.id.add_order_messenger_frame_layout)
+    }
+    override fun onClickDissmissFShowDialogNotEnoughInventory() {
+        TODO("Not yet implemented")
     }
 }

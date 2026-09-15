@@ -17,10 +17,10 @@ class FShowDialogNotEnoughInventory(val title: String, val textBtnDissmis: Strin
         titleTextView.text = title
         btnDissmiss.text = textBtnDissmis
         btnDissmiss.setOnClickListener {
-            iEvent.onClickDissmiss()
+            iEvent.onClickDissmissFShowDialogNotEnoughInventory()
         }
     }
 }
 interface IEvent{
-    fun onClickDissmiss()
+    fun onClickDissmissFShowDialogNotEnoughInventory()
 }
