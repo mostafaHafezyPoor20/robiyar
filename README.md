@@ -7,7 +7,7 @@
  Planned and implemented features include : 
 
  - post views [x]
- - Channel membership []
+ - Channel membership [x]
  - group membership []
  - poll status []
  - Rubino likes []
