@@ -59,6 +59,28 @@ class MessengerViewModel(): ViewModel() {
             }
         }
     }
+
+    //MEMBER SHIP GROUP
+    fun getSettingMemberShipGroup(token:String){
+        viewModelScope.launch {
+            try {
+                val response = messengerRepository.getSettingMemberShipGroup(token)
+                stateSettingOrder.value = SettingOrderState.Success(response)
+            }catch (e: Exception){
+              stateSettingOrder.value = SettingOrderState.Error(e.message ?: "Unknown error")
+            }
+        }
+    }
+    fun addMemberShipGroup(token: String,groupID: String, countOrder: String){
+        viewModelScope.launch {
+            try {
+               val response  = messengerRepository.addMemberShipGroup(token,groupID,countOrder)
+                stateAddOrder.value = AddOrderState.Success(response)
+            }catch (e:Exception){
+                stateAddOrder.value = AddOrderState.Error(e.message ?: "Unknown error")
+            }
+        }
+    }
 }
 
 

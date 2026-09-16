@@ -18,4 +18,12 @@ class MessengerRepository(private val apiService: ApiService) {
     suspend fun addMemberShipChannel(token: String,channelID: String,countOrder: String): String{
         return apiService.addMemberShipChannel(token,channelID,countOrder)
     }
+
+    suspend fun getSettingMemberShipGroup(token:String): ModelSettingOrders{
+        return apiService.getSettingMemberShipGroup(token)
+    }
+
+    suspend fun addMemberShipGroup(token: String,groupID : String , countOrder: String):String{
+        return apiService.addMemberShipGroup(token,groupID,countOrder)
+    }
 }

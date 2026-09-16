@@ -45,7 +45,7 @@ class AddOrderMessenger : AppCompatActivity() , IEvent ,mostafa.hafezypoor.robiy
             }else if (it == "MEMBER_GROUP"){
                 imageHead.setImageResource(R.drawable.group_circle_discussing)
                 textHead.setText("عضو گروه")
-                thisFragment = FMemberGroup()
+                thisFragment = FMemberGroup(this)
                 AnimationCard.expandAnimation(card,supportFragmentManager,R.id.add_order_messenger_frame_layout,
                     thisFragment,"FMemberGroup",actionBar,500)
             }else if (it == "POLL"){

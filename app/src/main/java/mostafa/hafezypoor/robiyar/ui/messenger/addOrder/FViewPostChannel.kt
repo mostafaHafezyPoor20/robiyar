@@ -3,10 +3,8 @@ package mostafa.hafezypoor.robiyar.ui.messenger.addOrder
 import android.content.Context.MODE_PRIVATE
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.TextView
-import android.widget.Toast
 import android.widget.ViewFlipper
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -22,7 +20,6 @@ import mostafa.hafezypoor.robiyar.ui.messenger.AddOrderState
 import mostafa.hafezypoor.robiyar.ui.messenger.MessengerViewModel
 import mostafa.hafezypoor.robiyar.ui.messenger.SettingOrderState
 import kotlin.getValue
-import kotlin.random.Random
 
 class FViewPostChannel(val iEvent: IEvent) : Fragment(R.layout.fview_post_channel){
     private lateinit var viewFlipper: ViewFlipper
@@ -30,7 +27,7 @@ class FViewPostChannel(val iEvent: IEvent) : Fragment(R.layout.fview_post_channe
     private lateinit var btnV2_back : MaterialButton
     private lateinit var btnV1_backToHome : MaterialButton
     private lateinit var btnAddOrder : MaterialButton
-    private lateinit var btnGoListOreders : MaterialButton
+    private lateinit var btnGoListOrders : MaterialButton
     private lateinit var countOrder : TextInputEditText
     private lateinit var channelID : TextInputEditText
     private lateinit var titleOrder: TextView
@@ -43,7 +40,7 @@ class FViewPostChannel(val iEvent: IEvent) : Fragment(R.layout.fview_post_channe
         viewFlipper = view.findViewById<ViewFlipper>(R.id.viewFlipper)
         btnV1_Understand = view.findViewById<MaterialButton>(R.id.btnV1_Understand)
         btnV1_backToHome = view.findViewById<MaterialButton>(R.id.btnV1_backToHome)
-        btnGoListOreders = view.findViewById<MaterialButton>(R.id.btnGoListOreders)
+        btnGoListOrders = view.findViewById<MaterialButton>(R.id.btnGoListOreders)
         btnV2_back = view.findViewById<MaterialButton>(R.id.btnV2_back)
         btnAddOrder = view.findViewById<MaterialButton>(R.id.btnAddOrder)
         titleOrder = view.findViewById<TextView>(R.id.titleOrder)
@@ -115,7 +112,7 @@ class FViewPostChannel(val iEvent: IEvent) : Fragment(R.layout.fview_post_channe
                 }
             }
         }
-     btnGoListOreders.setOnClickListener {
+     btnGoListOrders.setOnClickListener {
          val intent = Intent(activity, MainActivity::class.java)
          intent.putExtra("DESTINATION","ORDERS")
          startActivity(intent)
