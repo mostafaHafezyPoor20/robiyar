@@ -49,6 +49,16 @@ class MessengerViewModel(): ViewModel() {
             }
         }
     }
+    fun addMemberShipChannel(token: String,channelID: String,countOrder: String){
+        viewModelScope.launch {
+            try {
+                val response = messengerRepository.addMemberShipChannel(token,channelID,countOrder)
+                stateAddOrder.value = AddOrderState.Success(response)
+            }catch (e: Exception){
+                stateAddOrder.value = AddOrderState.Error(e.message ?: "Unknown error")
+            }
+        }
+    }
 }
 
 
