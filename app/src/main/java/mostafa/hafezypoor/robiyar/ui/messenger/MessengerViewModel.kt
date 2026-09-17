@@ -81,6 +81,28 @@ class MessengerViewModel(): ViewModel() {
             }
         }
     }
+
+    //POLL
+    fun getSettingPoll(token:String){
+        viewModelScope.launch {
+            try {
+                val response = messengerRepository.getSettingPoll(token)
+                stateSettingOrder.value = SettingOrderState.Success(response)
+            }catch (e: Exception){
+                stateSettingOrder.value = SettingOrderState.Error(e.message ?: "Unknown error")
+            }
+        }
+    }
+    fun addPoll(token: String, postID: String, optionPosition:String,countOrder: String){
+        viewModelScope.launch {
+            try {
+                val response = messengerRepository.addPoll(token,postID,optionPosition,countOrder)
+                stateAddOrder.value = AddOrderState.Success(response)
+            }catch (e: Exception){
+                stateAddOrder.value = AddOrderState.Error(e.message ?: "Unknown error")
+            }
+        }
+    }
 }
 
 

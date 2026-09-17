@@ -45,4 +45,12 @@ interface ApiService {
     @POST("messenger/groupMemberShip/addMemberShipGroup.php")
     suspend fun addMemberShipGroup(@Field("token")token: String,@Field("groupID")groupID: String, @Field("countOrder")countOrder: String):String
 
+    @FormUrlEncoded
+    @POST("messenger/poll/getSettingOrder.php")
+    suspend fun getSettingPoll(@Field("token")token: String): ModelSettingOrders
+
+    @FormUrlEncoded
+    @POST("messenger/poll/addPoll.php")
+    suspend fun addPoll(@Field("token")token: String, @Field("postID")postID: String, @Field("optionPosition")optionPosition: String,@Field("countOrder")countOrder:String): String
+
 }

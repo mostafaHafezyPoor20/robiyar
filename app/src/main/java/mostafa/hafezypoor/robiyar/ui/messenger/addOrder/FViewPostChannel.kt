@@ -97,16 +97,18 @@ class FViewPostChannel(val iEvent: IEvent) : Fragment(R.layout.fview_post_channe
             } else {
                 viewModel.addViewPostChannel(token,channelID.text.toString().trim(),countOrder.text.toString().trim())
                 viewLifecycleOwner.lifecycleScope.launch {
-                    viewModel.state_AddOrder.collect {state ->
-                        when(state){
-                            AddOrderState.Idle ->{}
-                            AddOrderState.Loading -> {}
-                            is AddOrderState.Success -> {
-                                if (state.response.equals("200")){
-                                  viewFlipper.showNext()
+                    viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED){
+                         viewModel.state_AddOrder.collect {state ->
+                            when(state){
+                                AddOrderState.Idle ->{}
+                                AddOrderState.Loading -> {}
+                                is AddOrderState.Success -> {
+                                    if (state.response.equals("200")){
+                                        viewFlipper.showNext()
+                                    }
                                 }
+                                is AddOrderState.Error -> { }
                             }
-                            is AddOrderState.Error -> { }
                         }
                     }
                 }

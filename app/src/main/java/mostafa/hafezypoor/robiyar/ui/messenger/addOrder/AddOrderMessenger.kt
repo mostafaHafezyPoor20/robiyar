@@ -51,7 +51,7 @@ class AddOrderMessenger : AppCompatActivity() , IEvent ,mostafa.hafezypoor.robiy
             }else if (it == "POLL"){
                 imageHead.setImageResource(R.drawable.poll_follower_count)
                 textHead.setText("نظر سنجی روبیکا")
-                thisFragment = FPoll()
+                thisFragment = FPoll(this)
                 AnimationCard.expandAnimation(card,supportFragmentManager,R.id.add_order_messenger_frame_layout,
                     thisFragment,"FPoll",actionBar,500)
             }
