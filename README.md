@@ -8,8 +8,8 @@
 
  - post views [x]
  - Channel membership [x]
- - group membership []
- - poll status []
+ - group membership [x]
+ - poll status [x]
  - Rubino likes []
  - Rubino views []
  - Rubino followers []
