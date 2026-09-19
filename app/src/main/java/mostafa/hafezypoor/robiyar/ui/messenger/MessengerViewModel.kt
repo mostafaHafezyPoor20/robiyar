@@ -1,5 +1,4 @@
 package mostafa.hafezypoor.robiyar.ui.messenger
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -13,7 +12,7 @@ class MessengerViewModel(): ViewModel() {
     private val messengerRepository= MessengerRepository(RetrofitInit.api)
 
     private val stateSettingOrder= MutableStateFlow<SettingOrderState>(SettingOrderState.Idle)
-    val state_SettingOrde : StateFlow<SettingOrderState> =stateSettingOrder.asStateFlow()
+    val state_SettingOrder : StateFlow<SettingOrderState> =stateSettingOrder.asStateFlow()
 
     private val stateAddOrder=MutableStateFlow<AddOrderState>(AddOrderState.Idle)
     val state_AddOrder: StateFlow<AddOrderState> = stateAddOrder.asStateFlow()

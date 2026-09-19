@@ -3,13 +3,11 @@ package mostafa.hafezypoor.robiyar.ui.messenger.addOrder
 import android.content.Context.MODE_PRIVATE
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import android.widget.TextView
-import android.widget.Toast
 import android.widget.ViewFlipper
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -24,7 +22,6 @@ import mostafa.hafezypoor.robiyar.R
 import mostafa.hafezypoor.robiyar.ui.messenger.AddOrderState
 import mostafa.hafezypoor.robiyar.ui.messenger.MessengerViewModel
 import mostafa.hafezypoor.robiyar.ui.messenger.SettingOrderState
-import kotlin.random.Random
 
 class FPoll(val iEvent: IEvent) : Fragment(R.layout.fpoll){
     private lateinit var viewFlipper: ViewFlipper
@@ -99,7 +96,7 @@ class FPoll(val iEvent: IEvent) : Fragment(R.layout.fpoll){
         viewModel.getSettingPoll(token)
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED){
-                viewModel.state_SettingOrde.collect {state->
+                viewModel.state_SettingOrder.collect { state->
                     when(state){
                         SettingOrderState.Idle -> {}
                         SettingOrderState.Loading -> {}

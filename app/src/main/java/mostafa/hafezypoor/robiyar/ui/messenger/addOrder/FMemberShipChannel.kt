@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.TextView
-import android.widget.Toast
 import android.widget.ViewFlipper
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -95,7 +94,7 @@ class FMemberShipChannel(val iEvent: IEvent) : Fragment(R.layout.fmember_ship_ch
        viewModel.getSettingMemberShipChannel(token)
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED){
-                viewModel.state_SettingOrde.collect {state->
+                viewModel.state_SettingOrder.collect { state->
                     when(state){
                         SettingOrderState.Idle -> {}
                         SettingOrderState.Loading -> {}

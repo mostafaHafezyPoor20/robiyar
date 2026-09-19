@@ -53,4 +53,11 @@ interface ApiService {
     @POST("messenger/poll/addPoll.php")
     suspend fun addPoll(@Field("token")token: String, @Field("postID")postID: String, @Field("optionPosition")optionPosition: String,@Field("countOrder")countOrder:String): String
 
+    @FormUrlEncoded
+    @POST("robino/follower/getSettingOrder.php")
+    suspend fun getSettingFollower(@Field("token")token:String): ModelSettingOrders
+
+    @FormUrlEncoded
+    @POST("robino/follower/addFollower.php")
+    suspend fun addFollower(@Field("token")token: String, @Field("pageID")pageID: String,@Field("countOrder")countOrder: String): String
 }

@@ -57,7 +57,7 @@ class FViewPostChannel(val iEvent: IEvent) : Fragment(R.layout.fview_post_channe
         viewModel.getSettingViewPostChannel(token)
         viewLifecycleOwner.lifecycleScope.launch {
           viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED){
-              viewModel.state_SettingOrde.collect {state->
+              viewModel.state_SettingOrder.collect { state->
                   when(state){
                       SettingOrderState.Idle -> {}
                       SettingOrderState.Loading -> {}

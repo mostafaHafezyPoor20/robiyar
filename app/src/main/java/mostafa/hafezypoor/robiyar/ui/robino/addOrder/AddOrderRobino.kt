@@ -7,11 +7,15 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import mostafa.hafezypoor.robiyar.MainActivity
 import mostafa.hafezypoor.robiyar.R
+import mostafa.hafezypoor.robiyar.ui.inventory.FInventory
+import mostafa.hafezypoor.robiyar.ui.inventory.FShowDialogNotEnoughInventory
 import mostafa.hafezypoor.robiyar.utils.AnimationCard
 
-class AddOrderRobino : AppCompatActivity() {
+class AddOrderRobino : AppCompatActivity(), IEvent,mostafa.hafezypoor.robiyar.ui.inventory.IEvent{
+    private lateinit var thisFragment : Fragment
     private lateinit var imageHead : ImageView
     private lateinit var imageHeadBack : ImageView
     private lateinit var textHead  : TextView
@@ -30,10 +34,11 @@ class AddOrderRobino : AppCompatActivity() {
         intentToActivity.putExtra("DESTINATION","ROBINO")
         intent.getStringExtra("ItemClicked")?.let {
             if (it == "FOLLOWER_ROBINO"){
+                thisFragment = FFollowerRobino(this)
             imageHead.setImageResource(R.drawable.follow_button)
             textHead.setText("فالور وربینو")
                 AnimationCard.expandAnimation(card,supportFragmentManager,R.id.add_order_messenger_frame_layout,
-                    FFollowerRobino(),"FFollowerRobino",actionBar,500)
+                    thisFragment,"FFollowerRobino",actionBar,500)
             }else if (it == "LIKE_POST_ROBINO"){
                 imageHead.setImageResource(R.drawable.post_reaction)
                 textHead.setText("لایک پست روبینو")
@@ -56,5 +61,22 @@ class AddOrderRobino : AppCompatActivity() {
     override fun onBackPressed() {
      startActivity(intentToActivity)
         finish()
+    }
+
+    override fun inventoryNotEnough() {
+        val fShowDialogNotEnoughInventory = FShowDialogNotEnoughInventory("موجودی شما کافی نیست !","افزایش موجودی",this)
+        AnimationCard.collapseAnimation(card
+            ,thisFragment,
+            fShowDialogNotEnoughInventory,
+            "fShowDialogNotEnoughInventory",supportFragmentManager,
+            actionBar,200,true,R.id.add_order_messenger_frame_layout)
+    }
+
+    override fun onClickDissmissFShowDialogNotEnoughInventory() {
+        AnimationCard.collapseAnimation(card
+            ,thisFragment,
+            FInventory(),
+            "fShowDialogNotEnoughInventory",supportFragmentManager,
+            actionBar,200,true,R.id.add_order_messenger_frame_layout)
     }
 }
