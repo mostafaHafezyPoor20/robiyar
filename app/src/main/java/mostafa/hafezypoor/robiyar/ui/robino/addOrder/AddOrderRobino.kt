@@ -40,10 +40,11 @@ class AddOrderRobino : AppCompatActivity(), IEvent,mostafa.hafezypoor.robiyar.ui
                 AnimationCard.expandAnimation(card,supportFragmentManager,R.id.add_order_messenger_frame_layout,
                     thisFragment,"FFollowerRobino",actionBar,500)
             }else if (it == "LIKE_POST_ROBINO"){
+                thisFragment = FLikePostRobino(this)
                 imageHead.setImageResource(R.drawable.post_reaction)
                 textHead.setText("لایک پست روبینو")
                 AnimationCard.expandAnimation(card,supportFragmentManager,R.id.add_order_messenger_frame_layout,
-                    FLikePostRobino(),"FLikePostRobino",actionBar,500)
+                    thisFragment,"FLikePostRobino",actionBar,500)
             }else if (it == "VIEW_POST_ROBINO"){
                 imageHead.setImageResource(R.drawable.cartoon_post_photo)
                 textHead.setText("ویو پست روبینو")

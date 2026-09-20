@@ -60,4 +60,12 @@ interface ApiService {
     @FormUrlEncoded
     @POST("robino/follower/addFollower.php")
     suspend fun addFollower(@Field("token")token: String, @Field("pageID")pageID: String,@Field("countOrder")countOrder: String): String
+
+    @FormUrlEncoded
+    @POST("robino/like/getSettingOrder.php")
+    suspend fun getSettingLike(@Field("token")token: String): ModelSettingOrders
+
+    @FormUrlEncoded
+    @POST("robino/like/addLike.php")
+    suspend fun addLike(@Field("token")token: String,@Field("postID")postID: String,@Field("countOrder")countOrder: String):String
 }

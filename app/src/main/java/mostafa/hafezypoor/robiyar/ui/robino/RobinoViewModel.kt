@@ -40,7 +40,29 @@ class RobinoViewModel(): ViewModel() {
             }
         }
     }
+    //LIKE
+    fun getSettingLike(token:String){
+        viewModelScope.launch {
+            try {
+                val response = robinoRepository.getSettingLike(token)
+                stateSettingOrder.value = SettingOrderState.Success(response)
+            }catch (e: Exception){
+                stateSettingOrder.value = SettingOrderState.Error(e.message ?: "Unknown error")
+            }
+        }
+    }
+    fun addLike(token: String, pageID: String,countOrder: String){
+        viewModelScope.launch {
+            try {
+                val response = robinoRepository.addLike(token,pageID,countOrder)
+                stateAddOrder.value = AddOrderState.Success(response)
+            }catch (e: Exception){
+                stateAddOrder.value = AddOrderState.Error(e.message ?: "Unknown error")
+            }
+        }
+    }
 }
+
 
 sealed class SettingOrderState{
     object Idle: SettingOrderState()

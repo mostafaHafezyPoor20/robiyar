@@ -115,7 +115,6 @@ class FFollowerRobino(val iEvent: IEvent) : Fragment(R.layout.ffollower_robino){
                                     }
                                 }
                                 is AddOrderState.Error -> {
-                                    Log.i("TAG12345", "onViewCreated: "+state.message)
                                 }
                             }
                         }
