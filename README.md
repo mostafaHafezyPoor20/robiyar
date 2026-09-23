@@ -10,10 +10,9 @@
  - Channel membership [x]
  - group membership [x]
  - poll status [x]
- - Rubino likes []
- - Rubino views []
- - Rubino followers []
- - Other Rubika-related tasks []
+ - Rubino likes [x]
+ - Rubino views [x]
+ - Rubino followers [x]
 
   ## Technologies 
    - kotlin
