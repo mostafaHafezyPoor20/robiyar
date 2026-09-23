@@ -20,4 +20,13 @@ class RobinoRepository(private val apiService: ApiService) {
     suspend fun addLike(token: String, postID: String, countOrder: String):String{
         return apiService.addLike(token,postID,countOrder)
     }
+
+    //VIEW POST ROBINO
+    suspend fun getSettingViewPostRobino(token: String): ModelSettingOrders{
+        return apiService.getSettingViewPostRobino(token)
+    }
+
+    suspend fun addViewPostRobino(token: String,postID: String,countOrder: String): String{
+        return apiService.addViewPostRobino(token,postID,countOrder)
+    }
 }

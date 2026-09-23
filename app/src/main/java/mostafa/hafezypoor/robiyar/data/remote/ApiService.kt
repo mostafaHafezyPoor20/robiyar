@@ -1,5 +1,6 @@
 package mostafa.hafezypoor.robiyar.data.remote
 
+import android.R
 import mostafa.hafezypoor.robiyar.data.model.ModelDetailUser
 import mostafa.hafezypoor.robiyar.data.model.ModelLogin
 import mostafa.hafezypoor.robiyar.data.model.ModelRegister
@@ -68,4 +69,12 @@ interface ApiService {
     @FormUrlEncoded
     @POST("robino/like/addLike.php")
     suspend fun addLike(@Field("token")token: String,@Field("postID")postID: String,@Field("countOrder")countOrder: String):String
+
+    @FormUrlEncoded
+    @POST("robino/view/getSettingOrder.php")
+    suspend fun getSettingViewPostRobino(@Field("token")token: String): ModelSettingOrders
+
+    @FormUrlEncoded
+    @POST("robino/view/addViewPostRobino.php")
+    suspend fun addViewPostRobino(@Field("token")token: String,@Field("postID")postID: String ,@Field("countOrder")countOrder: String): String
 }

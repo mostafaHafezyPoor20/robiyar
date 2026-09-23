@@ -1,5 +1,6 @@
 package mostafa.hafezypoor.robiyar.ui.robino
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -55,6 +56,29 @@ class RobinoViewModel(): ViewModel() {
         viewModelScope.launch {
             try {
                 val response = robinoRepository.addLike(token,pageID,countOrder)
+                stateAddOrder.value = AddOrderState.Success(response)
+            }catch (e: Exception){
+                stateAddOrder.value = AddOrderState.Error(e.message ?: "Unknown error")
+            }
+        }
+    }
+
+    //VIEW POST ROBINO
+    fun getSettingViewPostRobino(token:String){
+        viewModelScope.launch {
+            try {
+                val response = robinoRepository.getSettingViewPostRobino(token)
+                stateSettingOrder.value = SettingOrderState.Success(response)
+            }catch (e: Exception){
+                stateSettingOrder.value = SettingOrderState.Error(e.message ?: "Unknown error")
+            }
+        }
+    }
+
+    fun addViewPostRobino(token: String,postID: String,countOrder: String){
+        viewModelScope.launch {
+            try {
+                val response = robinoRepository.addViewPostRobino(token,postID,countOrder)
                 stateAddOrder.value = AddOrderState.Success(response)
             }catch (e: Exception){
                 stateAddOrder.value = AddOrderState.Error(e.message ?: "Unknown error")
