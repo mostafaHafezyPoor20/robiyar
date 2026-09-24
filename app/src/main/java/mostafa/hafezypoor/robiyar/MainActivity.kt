@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.widget.FrameLayout
 import android.widget.RelativeLayout
 import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.appcompat.app.AppCompatActivity
@@ -14,7 +13,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import kotlinx.coroutines.launch
 import mostafa.hafezypoor.robiyar.ui.account.FAccount
 import mostafa.hafezypoor.robiyar.ui.messenger.FMessenger
-import mostafa.hafezypoor.robiyar.ui.order.FOrder
+import mostafa.hafezypoor.robiyar.ui.order.FOrders
 import mostafa.hafezypoor.robiyar.ui.robino.FRobino
 import mostafa.hafezypoor.robiyar.utils.AnimationCard
 import np.com.susanthapa.curved_bottom_navigation.CbnMenuItem
@@ -73,7 +72,7 @@ class MainActivity : AppCompatActivity() {
                 }
                "ORDERS"  ->{
                    AnimationCard.collapseAnimation(card,supportFragmentManager.findFragmentById(R.id.frameLayout_main_activity),
-                       FOrder(),"FOrder",supportFragmentManager,actionBar,300,true,R.id.frameLayout_main_activity)
+                       FOrders(),"FOrder",supportFragmentManager,actionBar,300,true,R.id.frameLayout_main_activity)
                    bottomNavigation.setMenuItems(menuItems,2)
                }
                 else ->    AnimationCard.expandAnimation(card,supportFragmentManager,R.id.frameLayout_main_activity,
@@ -90,7 +89,7 @@ class MainActivity : AppCompatActivity() {
                         FRobino(),"FRobino",supportFragmentManager,actionBar,300,true,R.id.frameLayout_main_activity)
 
                     2 -> AnimationCard.collapseAnimation(card,supportFragmentManager.findFragmentById(R.id.frameLayout_main_activity),
-                        FOrder(),"FOrder",supportFragmentManager,actionBar,300,true,R.id.frameLayout_main_activity)
+                        FOrders(),"FOrder",supportFragmentManager,actionBar,300,true,R.id.frameLayout_main_activity)
 
                     3 -> AnimationCard.collapseAnimation(card,supportFragmentManager.findFragmentById(R.id.frameLayout_main_activity),
                         FAccount(),"faccount",supportFragmentManager,actionBar,200,true,R.id.frameLayout_main_activity)

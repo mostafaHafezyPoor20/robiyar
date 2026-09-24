@@ -1,8 +1,8 @@
 package mostafa.hafezypoor.robiyar.data.remote
 
-import android.R
 import mostafa.hafezypoor.robiyar.data.model.ModelDetailUser
 import mostafa.hafezypoor.robiyar.data.model.ModelLogin
+import mostafa.hafezypoor.robiyar.data.model.ModelOrders
 import mostafa.hafezypoor.robiyar.data.model.ModelRegister
 import mostafa.hafezypoor.robiyar.data.model.ModelSettingOrders
 import retrofit2.http.Field
@@ -77,4 +77,8 @@ interface ApiService {
     @FormUrlEncoded
     @POST("robino/view/addViewPostRobino.php")
     suspend fun addViewPostRobino(@Field("token")token: String,@Field("postID")postID: String ,@Field("countOrder")countOrder: String): String
+
+    @FormUrlEncoded
+    @POST("orders/orders.php")
+    suspend fun getOrders(@Field("token")token: String):List<ModelOrders>
 }
