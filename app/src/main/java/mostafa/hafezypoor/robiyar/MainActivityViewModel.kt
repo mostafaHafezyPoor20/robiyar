@@ -7,9 +7,8 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
-import mostafa.hafezypoor.robiyar.data.model.ModelDetailUser
+import mostafa.hafezypoor.robiyar.data.model.ModelDetailAccount
 import mostafa.hafezypoor.robiyar.data.remote.RetrofitInit
-import mostafa.hafezypoor.robiyar.data.repository.AuthRepository
 import mostafa.hafezypoor.robiyar.data.repository.MainActivityRepository
 
 class MainActivityViewModel() : ViewModel() {
@@ -32,7 +31,7 @@ sealed class MainActivityState{
     object Idle : MainActivityState()
     object Loading : MainActivityState()
 
-    data class Success(val response : ModelDetailUser) : MainActivityState()
+    data class Success(val response : ModelDetailAccount) : MainActivityState()
     data class Error(val message : String) : MainActivityState()
 
 }

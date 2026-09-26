@@ -1,6 +1,6 @@
 package mostafa.hafezypoor.robiyar.data.remote
 
-import mostafa.hafezypoor.robiyar.data.model.ModelDetailUser
+import mostafa.hafezypoor.robiyar.data.model.ModelDetailAccount
 import mostafa.hafezypoor.robiyar.data.model.ModelLogin
 import mostafa.hafezypoor.robiyar.data.model.ModelOrders
 import mostafa.hafezypoor.robiyar.data.model.ModelRegister
@@ -20,7 +20,7 @@ interface ApiService {
 
     @FormUrlEncoded
     @POST("account/getDetailUser.php")
-    suspend fun getDetailUser(@Field("token")token:String): ModelDetailUser
+    suspend fun getDetailUser(@Field("token")token:String): ModelDetailAccount
 
     @FormUrlEncoded
     @POST("messenger/viewPostChannel/getSettingOrder.php")
@@ -81,4 +81,12 @@ interface ApiService {
     @FormUrlEncoded
     @POST("orders/orders.php")
     suspend fun getOrders(@Field("token")token: String):List<ModelOrders>
+
+    @FormUrlEncoded
+    @POST("account/getDetailAccount.php")
+    suspend fun getDetailAccount(@Field("token")token: String) : ModelDetailAccount
+
+    @FormUrlEncoded
+    @POST("account/updateDetailUser.php")
+    suspend fun updateDetailUser(@Field("token")token: String, @Field("password")password: String,@Field("name")name: String): String
 }
