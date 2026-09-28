@@ -12,94 +12,69 @@
        app:lottie_rawRes="@raw/mony_animation"
        app:lottie_autoPlay="true"
        app:lottie_loop="true"/>
-  <com.google.android.material.card.MaterialCardView
+  <com.google.android.material.button.MaterialButton
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
+      app:cornerRadius="12sp"
+      android:layout_marginRight="12sp"
+      android:layout_marginLeft="12sp"
       android:layout_marginTop="12sp"
-      app:cardBackgroundColor="@color/white">
-      <LinearLayout
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:padding="12sp"
-          android:gravity="center">
-          <TextView
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:text="افزایش  موجودی 5 هزار تومان"
-              android:textStyle="bold"
-              android:textColor="@color/black"/>
-      </LinearLayout>
-  </com.google.android.material.card.MaterialCardView>
-  <com.google.android.material.card.MaterialCardView
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="12sp"
-      app:cardBackgroundColor="@color/white">
-      <LinearLayout
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:padding="12sp"
-          android:gravity="center">
-          <TextView
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:text="افزایش  موجودی 10 هزار تومان"
-              android:textStyle="bold"
-              android:textColor="@color/black"/>
-      </LinearLayout>
-  </com.google.android.material.card.MaterialCardView>
-  <com.google.android.material.card.MaterialCardView
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="12sp"
-      app:cardBackgroundColor="@color/white">
-      <LinearLayout
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:padding="12sp"
-          android:gravity="center">
-          <TextView
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:text="افزایش  موجودی 100 هزار تومان"
-              android:textStyle="bold"
-              android:textColor="@color/black"/>
-      </LinearLayout>
-  </com.google.android.material.card.MaterialCardView>
-  <com.google.android.material.card.MaterialCardView
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="12sp"
-      app:cardBackgroundColor="@color/white">
-      <LinearLayout
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:padding="12sp"
-          android:gravity="center">
-          <TextView
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:text="افزایش  موجودی 200 هزار تومان"
-              android:textStyle="bold"
-              android:textColor="@color/black"/>
-      </LinearLayout>
-  </com.google.android.material.card.MaterialCardView>
-  <com.google.android.material.card.MaterialCardView
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="12sp"
-      app:cardBackgroundColor="@color/white">
-      <LinearLayout
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:padding="12sp"
-          android:gravity="center">
-          <TextView
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:text="افزایش  موجودی 500 هزار تومان"
-              android:textStyle="bold"
-              android:textColor="@color/black"/>
-      </LinearLayout>
-  </com.google.android.material.card.MaterialCardView>
+      app:backgroundTint="@color/white"
+      app:strokeColor="@color/black"
+      app:strokeWidth="1sp"
+      android:id="@+id/five_inventory"
+      android:text="افزایش موجودی 5 هزار تومان"
+      android:textColor="@color/black"/>
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cornerRadius="12sp"
+        android:layout_marginRight="12sp"
+        android:layout_marginLeft="12sp"
+        android:layout_marginTop="12sp"
+        app:backgroundTint="@color/white"
+        app:strokeColor="@color/black"
+        app:strokeWidth="1sp"
+        android:id="@+id/ten_inventory"
+        android:text="افزایش موجودی 10 هزار تومان"
+        android:textColor="@color/black"/>
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cornerRadius="12sp"
+        android:layout_marginRight="12sp"
+        android:layout_marginLeft="12sp"
+        android:layout_marginTop="12sp"
+        app:backgroundTint="@color/white"
+        app:strokeColor="@color/black"
+        app:strokeWidth="1sp"
+        android:id="@+id/one_hundered_inventory"
+        android:text="افزایش موجودی 100 هزار تومان"
+        android:textColor="@color/black"/>
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cornerRadius="12sp"
+        android:layout_marginRight="12sp"
+        android:layout_marginLeft="12sp"
+        android:layout_marginTop="12sp"
+        app:backgroundTint="@color/white"
+        app:strokeColor="@color/black"
+        app:strokeWidth="1sp"
+        android:id="@+id/tow_hundered_inventory"
+        android:text="افزایش موجودی 200 هزار تومان"
+        android:textColor="@color/black"/>
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cornerRadius="12sp"
+        android:layout_marginRight="12sp"
+        android:layout_marginLeft="12sp"
+        android:layout_marginTop="12sp"
+        app:backgroundTint="@color/white"
+        app:strokeColor="@color/black"
+        app:strokeWidth="1sp"
+        android:id="@+id/five_hundered_inventory"
+        android:text="افزایش موجودی 500 هزار تومان"
+        android:textColor="@color/black"/>
 </LinearLayout>
