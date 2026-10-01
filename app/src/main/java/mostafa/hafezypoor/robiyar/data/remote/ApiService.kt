@@ -89,4 +89,12 @@ interface ApiService {
     @FormUrlEncoded
     @POST("account/updateDetailUser.php")
     suspend fun updateDetailUser(@Field("token")token: String, @Field("password")password: String,@Field("name")name: String): String
+
+    @FormUrlEncoded
+    @POST("inventory/increaseInventory.php")
+    suspend fun increaseInventory(@Field("token")token: String,@Field("result_is_success")result_is_success: String,
+                                  @Field("result_message")result_message: String,@Field("result_response")result_response: String, @Field("info_sku")info_sku: String,
+                                  @Field("info_item_type")info_item_type: String, @Field("info_token")info_token: String,@Field("info_purchase_time")info_purchase_time: String,
+                                  @Field("info_developer_payload")info_developer_payload: String,@Field("info_order_id")info_order_id: String, @Field("info_original_json")info_original_json: String,
+                                  @Field("info_package_name")info_package_name: String, @Field("info_purchase_state")info_purchase_state: String, @Field("info_signature")info_signature:String) : String
 }
