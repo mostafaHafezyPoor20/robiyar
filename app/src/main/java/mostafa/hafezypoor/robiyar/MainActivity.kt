@@ -1,6 +1,7 @@
 package mostafa.hafezypoor.robiyar
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.FrameLayout
 import android.widget.RelativeLayout
 import android.widget.TextView
@@ -42,7 +43,6 @@ class MainActivity : AppCompatActivity() {
                       MainActivityState.Idle -> {}
                       MainActivityState.Loading -> {}
                       is MainActivityState.Success -> {
-                     //  state.response  = this object data exists
                           name.text = state.response.name
                           inventory.text = state.response.inventory + " تومان "
                       }
