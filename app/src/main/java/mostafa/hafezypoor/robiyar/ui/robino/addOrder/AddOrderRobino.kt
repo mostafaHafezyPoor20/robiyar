@@ -14,7 +14,7 @@ import mostafa.hafezypoor.robiyar.ui.inventory.FInventory
 import mostafa.hafezypoor.robiyar.ui.inventory.FShowDialogNotEnoughInventory
 import mostafa.hafezypoor.robiyar.utils.AnimationCard
 
-class AddOrderRobino : AppCompatActivity(), IEvent,mostafa.hafezypoor.robiyar.ui.inventory.IEvent{
+class AddOrderRobino : AppCompatActivity(),mostafa.hafezypoor.robiyar.ui.inventory.IEvent,IEvent,mostafa.hafezypoor.robiyar.ui.inventory.IEventPayment{
     private lateinit var thisFragment : Fragment
     private lateinit var imageHead : ImageView
     private lateinit var imageHeadBack : ImageView
@@ -77,8 +77,22 @@ class AddOrderRobino : AppCompatActivity(), IEvent,mostafa.hafezypoor.robiyar.ui
     override fun onClickDissmissFShowDialogNotEnoughInventory() {
         AnimationCard.collapseAnimation(card
             ,thisFragment,
-            FInventory(),
+            FInventory(this),
             "fShowDialogNotEnoughInventory",supportFragmentManager,
+            actionBar,200,true,R.id.add_order_messenger_frame_layout)
+    }
+
+    override fun successPayment() {
+        thisFragment = when(thisFragment){
+            is FFollowerRobino -> FFollowerRobino(this)
+            is FLikePostRobino -> FLikePostRobino(this)
+            is FViewPostRobino -> FViewPostRobino(this)
+            else -> FFollowerRobino(this)
+        }
+        AnimationCard.collapseAnimation(card
+            , null,
+            thisFragment,
+            "fshowThisFragment",supportFragmentManager,
             actionBar,200,true,R.id.add_order_messenger_frame_layout)
     }
 }

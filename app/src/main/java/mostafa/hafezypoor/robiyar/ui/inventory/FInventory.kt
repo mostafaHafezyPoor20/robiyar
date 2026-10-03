@@ -18,7 +18,7 @@ import android.content.Context.MODE_PRIVATE
 import mostafa.hafezypoor.robiyar.ui.dialog.LoadingDialog
 
 
-class FInventory : Fragment(R.layout.finventory) , View.OnClickListener {
+class FInventory(val iEvent: IEventPayment) : Fragment(R.layout.finventory) , View.OnClickListener {
     private lateinit var token: String
     private lateinit var loadingDialog: LoadingDialog
     private val viewModel: InventoryViewModel by viewModels()
@@ -57,13 +57,13 @@ class FInventory : Fragment(R.layout.finventory) , View.OnClickListener {
                                                 AddOrderState.Idle -> {}
                                                 AddOrderState.Loading -> {}
                                                 is AddOrderState.Success -> {
-                                                    loadingDialog.setTitleTextView(state.response)
                                                     if (state.response.equals("200")){
                                                         loadingDialog.dismiss()
+                                                        iEvent.successPayment()
                                                     }
                                                 }
                                                 is AddOrderState.Error -> {
-                                                    loadingDialog.setTitleTextView(state.response)
+
                                                 }
                                             }
                                         }

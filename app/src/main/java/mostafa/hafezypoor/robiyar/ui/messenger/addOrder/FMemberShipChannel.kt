@@ -20,6 +20,7 @@ import mostafa.hafezypoor.robiyar.R
 import mostafa.hafezypoor.robiyar.ui.messenger.AddOrderState
 import mostafa.hafezypoor.robiyar.ui.messenger.MessengerViewModel
 import mostafa.hafezypoor.robiyar.ui.messenger.SettingOrderState
+import mostafa.hafezypoor.robiyar.ui.robino.addOrder.IEvent
 
 class FMemberShipChannel(val iEvent: IEvent) : Fragment(R.layout.fmember_ship_channel){
     private lateinit var viewFlipper: ViewFlipper

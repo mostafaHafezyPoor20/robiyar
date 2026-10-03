@@ -20,6 +20,7 @@ import mostafa.hafezypoor.robiyar.ui.messenger.AddOrderState
 import mostafa.hafezypoor.robiyar.ui.messenger.MessengerViewModel
 import mostafa.hafezypoor.robiyar.ui.messenger.SettingOrderState
 import kotlin.getValue
+import mostafa.hafezypoor.robiyar.ui.robino.addOrder.IEvent
 
 class FViewPostChannel(val iEvent: IEvent) : Fragment(R.layout.fview_post_channel){
     private lateinit var viewFlipper: ViewFlipper

@@ -10,15 +10,6 @@ class FShowDialogNotEnoughInventory(val title: String, val textBtnDissmis: Strin
     private lateinit var btnDissmiss : MaterialButton
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
-
-
-
-
-
-
-
       titleTextView = view.findViewById<TextView>(R.id.title)
       btnDissmiss = view.findViewById<MaterialButton>(R.id.btnDissmiss)
         titleTextView.text = title

@@ -19,6 +19,7 @@ import mostafa.hafezypoor.robiyar.R
 import mostafa.hafezypoor.robiyar.ui.messenger.AddOrderState
 import mostafa.hafezypoor.robiyar.ui.messenger.MessengerViewModel
 import mostafa.hafezypoor.robiyar.ui.messenger.SettingOrderState
+import mostafa.hafezypoor.robiyar.ui.robino.addOrder.IEvent
 
 class FMemberGroup(val iEvent: IEvent) : Fragment(R.layout.fmember_group){
     private lateinit var viewFlipper: ViewFlipper
