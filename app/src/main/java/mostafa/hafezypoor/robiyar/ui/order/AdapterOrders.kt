@@ -1,7 +1,6 @@
 package mostafa.hafezypoor.robiyar.ui.order
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -45,13 +44,11 @@ class AdapterOrders(val context: Context,val list : List<ModelOrders>) : Recycle
         holder.count_order.text = list.get(position).count_order
         holder.progress.max = list.get(position).count_order.toInt()
         holder.progress.progress = list.get(position).count_order_successed.toInt()
-
     }
 
     override fun getItemCount(): Int {
      return list.size
     }
-
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     val   titleOrder : TextView = itemView.findViewById<TextView>(R.id.titleOrder)
