@@ -42,6 +42,7 @@ class AdapterOrders(val context: Context,val list : List<ModelOrders>) : Recycle
             }
         }
         holder.linkOrder.text = list.get(position).link
+        holder.count_order.text = list.get(position).count_order
         holder.progress.max = list.get(position).count_order.toInt()
         holder.progress.progress = list.get(position).count_order_successed.toInt()
 
@@ -56,6 +57,7 @@ class AdapterOrders(val context: Context,val list : List<ModelOrders>) : Recycle
     val   titleOrder : TextView = itemView.findViewById<TextView>(R.id.titleOrder)
     val   statusOrder : TextView = itemView.findViewById<TextView>(R.id.statusOrder)
     val   linkOrder : TextView = itemView.findViewById<TextView>(R.id.linkOrder)
+    val   count_order : TextView = itemView.findViewById<TextView>(R.id.count_order)
     val progress : LinearProgressIndicator = itemView.findViewById<LinearProgressIndicator>(R.id.progressOrder)
     }
 }

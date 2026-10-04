@@ -68,13 +68,42 @@
                 android:textStyle="bold"
                 android:textColor="@color/black"/>
         </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="right"
+            android:layout_marginTop="12sp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="25"
+                android:maxLines="1"
+                android:id="@+id/count_order"
+                android:textSize="12sp"
+                android:layout_marginRight="12sp"
+                android:textColor="@color/black"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="تعداد سفارش : "
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+        </LinearLayout>
         <com.google.android.material.progressindicator.LinearProgressIndicator
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/progressOrder"
             android:paddingTop="12sp"
+            android:progress="50"
             android:paddingBottom="12sp"
             android:layout_marginTop="12sp"
+            android:secondaryProgressTint="@color/red"
+            android:indeterminateTint="@color/black"
+            app:trackColor="@color/white"
+            app:trackThickness="5sp"
+            android:foregroundTint="@color/white"
             android:progressTint="@color/background_item"/>
 
     </LinearLayout>
