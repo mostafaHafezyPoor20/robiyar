@@ -97,4 +97,8 @@ interface ApiService {
                                   @Field("info_item_type")info_item_type: String, @Field("info_token")info_token: String,@Field("info_purchase_time")info_purchase_time: String,
                                   @Field("info_developer_payload")info_developer_payload: String,@Field("info_order_id")info_order_id: String, @Field("info_original_json")info_original_json: String,
                                   @Field("info_package_name")info_package_name: String, @Field("info_purchase_state")info_purchase_state: String, @Field("info_signature")info_signature:String) : String
+
+
+    @POST("appVersion/checkVersion.php")
+    suspend fun checkUpdate():String
 }

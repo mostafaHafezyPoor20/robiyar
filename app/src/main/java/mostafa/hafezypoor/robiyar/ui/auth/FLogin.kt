@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 import mostafa.hafezypoor.robiyar.data.model.ModelLogin
 
 class FLogin(private val IEventLogin: IEventLogin) : Fragment(R.layout.flogin){
-private val viewModel: LoginViewModel by viewModels()
+private val viewModel: AuthViewModel by viewModels()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val btnRegister=view.findViewById<MaterialButton>(R.id.btnRegister)

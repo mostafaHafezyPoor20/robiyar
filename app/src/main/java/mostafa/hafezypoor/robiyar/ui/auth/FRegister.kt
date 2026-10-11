@@ -12,9 +12,10 @@ import com.google.android.material.textfield.TextInputEditText
 import kotlinx.coroutines.launch
 import mostafa.hafezypoor.robiyar.R
 import mostafa.hafezypoor.robiyar.data.model.ModelRegister
+import mostafa.hafezypoor.robiyar.data.repository.AuthRepository
 
 class FRegister(private val iEventRegister: IEventRegister) : Fragment(R.layout.fregister) {
-    private val viewModel:RegisterViewModel by viewModels()
+    private val viewModel: AuthViewModel by viewModels()
     private lateinit var btnLogin: MaterialButton
     private lateinit var btnRegister: MaterialButton
     private lateinit var name: TextInputEditText

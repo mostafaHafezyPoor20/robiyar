@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.update.UpdateActivity"
+    android:orientation="vertical"
+    android:gravity="center">
+<com.airbnb.lottie.LottieAnimationView
+    android:layout_width="match_parent"
+    android:layout_height="250sp"
+    app:lottie_rawRes="@raw/update_animation"
+    app:lottie_autoPlay="true"
+    app:lottie_loop="true"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:text="نسخه جدید رسید ! بروز رسانی کنید"/>
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="12sp"
+        android:layout_marginLeft="12sp"
+        android:layout_marginTop="12sp"
+        app:cornerRadius="12sp"
+        android:text="بروزرسانی"
+        app:backgroundTint="@color/background_item"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:id="@+id/btnUpdate"
+        android:textStyle="bold"/>
+</LinearLayout>

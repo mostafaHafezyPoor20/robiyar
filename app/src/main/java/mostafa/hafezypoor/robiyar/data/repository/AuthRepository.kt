@@ -5,6 +5,9 @@ import mostafa.hafezypoor.robiyar.data.model.ModelRegister
 import mostafa.hafezypoor.robiyar.data.remote.ApiService
 
 class AuthRepository(private val apiService: ApiService) {
+    suspend fun checkUpdate():String{
+        return apiService.checkUpdate()
+    }
      suspend fun login(username: String, password:String): ModelLogin{
       return apiService.login(username,password)
     }
